@@ -4,6 +4,7 @@
 - mutually exclusive events are not independent
 - independent events.
 ![independent_events](../images/indepedent_definition.png)
+- demorgan laws of probability.
 
 
 events: 
@@ -36,3 +37,23 @@ Events are dependent if: `P(A|C) = P(A)` but this can happen even if some of the
 - The two probabilites just need to be independent. C occuring just needs to not affect A... so if the probabilities are the same, who cares if C has elements of A.
 - P(A) is the same regardless of whether B occured.
 - also remember that mutually exclusive events are NOT independent.
+
+
+## Laws to Remember
+
+1. P(A or B) = P(A) + P(b) - P(A and B)
+- you subtract because you added that middle part of the venn diagram twice.
+
+Examples to review: Example 2.14
+
+Examples from video:
+
+![chat_2_union.png](../images/chat_2_union.png)
+
+and 
+
+![chap_2_union_3.png](../images/chap_2_union_3.png)
+
+![chap_2_none.png](../images/chap_2_none.png)
+
+2. for ELO or equally likely outcomes, you can just add up the events in the numerator / total number of outcomes to get the probability.
