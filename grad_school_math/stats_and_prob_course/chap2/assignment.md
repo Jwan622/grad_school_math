@@ -2,7 +2,7 @@
 
 Work:
 What is the total bulbs: 15
-number of bulbs that is not a 75 on the first: 11
+number of bulbs that is not a 75 on the first: 5 + 6
 11/15 * 4/14 + 11/15 * 10/14 * 4/13...
 
 wait isn't it just 11/15? If we don't a bulb that is 75 right away in the first then the 75 is picked on 2 or later right? 
@@ -18,8 +18,9 @@ Answer: 0.733
 2. "In October, 1994, a flaw in a certain Pentium chip installed in computers was discovered that could result in a wrong answer when performing a division. The manufacturer initially claimed that the chance of any particular division being incorrect was only 1 in 9 billion, so that it would take thousands of years before a typical user encountered a mistake. However, statisticians are not typical users; some modern statistical techniques are so computationally intensive that a billion divisions over a short time period is not outside the realm of possibility. Assuming that the 1 in 9 billion figure is correct and that results of different divisions are independent of one another, what is the probability that at least one error occurs in one billion divisions with this chip? Specify your answer to 4 decimal places." 
 
 Work: 
-this is the same as 1 - P(no errors happen in the first billion divisions) = 1 - (999,999,999/10^9)^(10^9). Is that right?
-Probability of no errors in one division = (1 - 1/9,000,000,000) (since the chance of an error is 1 in 9 billion).
+P(incorrect ever) = 1 - P(correct all the time) ->
+this is the same as 1 - P(correct always in the first billion divisions) = 1 - (999,999,999/10^9)^(10^9). Is that right?
+Probability of no errors in one division = (1 - 1/9,000,000,000) (since the chance of an error is 1 in 9 billion) so subtract from 1 to get chance of no error.
 
 Now, you want to find the probability of no errors in one billion divisions:
 (1 - 1/9,000,000,000)^(1,000,000,000)
@@ -27,7 +28,7 @@ Now, you want to find the probability of no errors in one billion divisions:
 So, the probability that at least one error occurs in one billion divisions is:
 1 - (1 - 1/9,000,000,000)^(1,000,000,000) = 1 - (8999999999/9000000000)^(1,000,000,000)
 
-Answer: 0.1051
+Answer: 0.1051j
 
 3. "Professor Stan der Deviation can take one of two routes on his way home from work. On the first route, there are four railroad crossings. The probability that he will be stopped by a train at any particular one of the crossings is .1, and trains operate independently at the four crossings. The other route is longer but there are only two crossings, independent of one another, with the same stoppage probability for each as on the first route. On a particular day, Professor Deviation has a meeting scheduled at home for a certain time. Whichever route he takes, he calculates that he will be late if he is stopped by trains at at least half the crossings encountered. Which route should he take to minimize the probability of being late to the meeting?"
 Group of answer choices
@@ -226,3 +227,94 @@ P(W|L) = 0.30 (30% of long reviews are in Word format).
 Law of total probability:
 You are using the Law of Total Probability, which states that the total probability of an event (in this case, a review being in Word format) is the sum of the probabilities of that event across all distinct categories.
 P(w) = 0.8 * 0.6 + 0.5 * 0.3 + 0.3 * 0.1
+
+answer:
+0.66 
+
+
+14. "A boiler has five identical relief valves. The probability that any particular valve will open on demand is .95. Assuming independent operation of the valves, calculate P(at least one valve opens). Specify your answer to 8 decimal places."
+
+P(at least 1) = 1 - P(none) = 1 - 0.95^5
+
+work: 0.99999969
+
+
+15. "Professor Stan der Deviation can take one of two routes on his way home from work. On the first route, there are four railroad crossings. The probability that he will be stopped by a train at any particular one of the crossings is .1, and trains operate independently at the four crossings. The other route is longer but there are only two crossings, independent of one another, with the same stoppage probability for each as on the first route. On a particular day, Professor Deviation has a meeting scheduled at home for a certain time. Whichever route he takes, he calculates that he will be late if he is stopped by trains at at least half the crossings encountered. Calculate the probability of being late using route #2. Specify your answer to 2 decimal places."
+
+work:
+
+For route #2, there are two possibilities that result in Professor Deviation being late:
+
+He is stopped at the first crossing but not at the second.
+He is stopped at the second crossing but not at the first.
+He is stopped at both crossings.
+
+The probability of each of these scenarios is calculated as follows:
+
+Probability of being stopped at the first crossing but not the second: 
+0.1×0.9.
+
+Probability of being stopped at the second crossing but not the first: 
+0.9×0.1.
+
+Probability of being stopped at both crossings:
+0.1×0.1.
+
+P(late)=(0.1×0.9)+(0.9×0.1)+(0.1×0.1)
+
+Answer: 0.19
+
+
+16. "Professor Stan der Deviation can take one of two routes on his way home from work. On the first route, there are four railroad crossings. The probability that he will be stopped by a train at any particular one of the crossings is .1, and trains operate independently at the four crossings. The other route is longer but there are only two crossings, independent of one another, with the same stoppage probability for each as on the first route. On a particular day, Professor Deviation has a meeting scheduled at home for a certain time. Whichever route he takes, he calculates that he will be late if he is stopped by trains at at least half the crossings encountered. Calculate the probability of being late using route #1. Specify your answer to 4 decimal places."
+
+work: 
+
+p(late for route 1) = P(stopped by 2 trains) + P(stopped by 3 trains) + P(stopped by 4 trains)
+
+P(at least 2) = 1 - P(0) - P(1) so we're using complement rule.
+
+P(0 trains stopped) = 0.9^4 = 0.6561
+P(1 trains stopped) = 4c1 * * (0.1)^1 * (0.9)^3 = 4 * 0.1 * (0.9)^3 ≈ 0.2916 (probability of being stopped at exactly one crossing)
+
+so 1 - 0.6561 - 0.2916
+
+answer: 0.0523
+
+
+
+17. "A department store sells sport shirts in three sizes (small, medium, and large), three patterns (plaid, print, and stripe), and two sleeve lengths (long and short). The tables on page 81 (exercise number 50) give the proportions of shirts sold in the various category combinations. Given that the shirt just sold was a medium plaid, what is the probability that it was long- sleeved? Specify your answer to 3 decimal places."
+
+work:
+Use Conditional Prob
+From the chart:
+
+The proportion of medium plaid short-sleeved shirts is 0.08.
+The proportion of medium plaid long-sleeved shirts is 0.10.
+First, we add these to get the total proportion of medium plaid shirts, regardless of sleeve length:
+
+P(medium plaid ) = p(medim plaid short sleeve) + P(medium plaid long sleeve) = 0.08 + 0.1
+Then, the conditional probability that the shirt was long-sleeved given that it was medium plaid is:
+
+P(Long-sleeved | Medium Plaid) =  P(Medium Plaid Long-sleeved) / P(Medium Plaid)
+P(LS | Medium Plaid) = P(Medium Plaid and LS) / P(Medium Plaid) = 0.10 / 0.18 = 5/9 =
+
+Answer: 0.556
+
+
+18. "A department store sells sport shirts in three sizes (small, medium, and large), three patterns (plaid, print, and stripe), and two sleeve lengths (long and short). The tables on page 81 (exercise number 50) give the proportions of shirts sold in the various category combinations. Given that the shirt just sold was a medium plaid, what is the probability that it was short-sleeved? Specify your answer to 3 decimal places."
+
+
+
+answer: 0.444
+
+
+
+19."A department store sells sport shirts in three sizes (small, medium, and large), three patterns (plaid, print, and stripe), and two sleeve lengths (long and short). The tables on page 81 (exercise number 50) give the proportions of shirts sold in the various category combinations. Given that the shirt just sold was a medium plaid, what is the probability that it was short-sleeved? Specify your answer to 3 decimal places."
+
+work:
+adding it up on the chart, looks like 0.44/1 = 0.44
+
+
+20. "A department store sells sport shirts in three sizes (small, medium, and large), three patterns (plaid, print, and stripe), and two sleeve lengths (long and short). The tables on page 81 (exercise number 50) give the proportions of shirts sold in the various category combinations. What is the probability that the pattern of the next shirt sold is a print? Specify your answer to 2 decimal places."
+
+work: 0.25

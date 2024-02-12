@@ -4,7 +4,7 @@
 - mutually exclusive events are not independent
 - independent events.
 ![independent_events](../images/indepedent_definition.png)
-- demorgan laws of probability.
+- demorgan laws of probability. lecture 2.2b in the videos.
 
 
 events: 
@@ -70,9 +70,13 @@ Examples to review: Example 2.14
 
 
 2. De Morgan's law: P(A' and B') = 1 - P(A or B)
+- This makes sense. 2.2b video. P(A) - A inspector thinks some number of chips are defective. P(B) - inspector B thinks some other number of chips are defective. What's the probability that neither A or B thinks the chip is defective. How many chips? Well it's 1 - P(A or B).
 
-3. More demorgans: P(B and A') = P(B) - P(A and B)
-
+3. More demorgans: P(B and A') = P(B) - P(A and B) . 2.2b video again.
+- P(B and A') would be a chip defective by inspector B but not by A who thinks the chip is good. What would this be?
+- note A' means inspector A thinks chip is not defective
+- P(B) - P(A and B). this is addition rule: P(A or B) = P(A) + P(B) - P(A and B) and so P(A and B) = P(A) + P(B) - P(A or B)
+so since we have P(A and B) we can find: P(B and A') = P(B) - P(A and B)
 
 
 
