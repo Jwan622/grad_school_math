@@ -1,10 +1,12 @@
 # Topics to cover:
 - binomial distribution
+- binomial model
 - variance
 - poisson distribution
 - hypergeometric distribution
 - Random Variables
 - PMF probability mass function
+- poisson process
 
 
 
@@ -102,6 +104,12 @@ Binomial distribution is a common discrete distribution used in statistics, as o
 
 that's the PMF for a binomial model.
 
+from chatgpt:
+
+![binomial_formula_chatgpt.png](../images/binomial_formula_chatgpt.png)
+
+
+
 ### example of binomial using the chart
 
 ![binomial_using_chart.png](../images/binomial_using_chart.png)
@@ -158,13 +166,26 @@ Therefore, the probability of getting exactly 7 heads is 0.193.
 
 binomial is without replacement and when n is small relative to N (population size)
 
-hypergeometric is the exact model of number of successes in the sample and not just an approximation. What does it mean by exact? very similar to binomial. population is N or finite, withoiut replacement acccording to my textbook, each individual is S or F and teh random variable ix X which is random successes from the sample.
+from the video: Hypergeometric is the exact model of number of successes in the sample and not just an approximation. What does it mean by exact? very similar to binomial. population is N or finite, withoiut replacement acccording to my textbook, each individual is S or F and teh random variable ix X which is random successes from the sample.
 
 ![hypergeometric.png](../images/hypergeometric.png)
 
+### Example
+16 milk containers, 6 underweight ones, sample of 5.  We use hypergeometric here.
+
+So for P(2) = ((6c2) * (10C3)) / (16C5) = 0.412
+
 it is used when sampling without replacement but binomial is used for sampling with replacement or without replacement if the sample is very small relative to population size. That's because the chance of repicking is so small when n/N
 
-Note on Sampling and the Binomial Distribution
+
+### Hypergeometric mean and variance
+
+![hypergeometric_mean_var.png](../images/hypergeometric_mean_var.png)
+
+So in the milk example, the EV = n * M/N = 5*6/16 = 1.875
+
+
+### Note on Sampling and the Binomial Distribution
 The text also mentions that if the sampling was without replacement, but the ratio n/N is at most 0.05, the binomial distribution can be used to approximate probabilities involving the number of marked individuals in the sample. This is because when the sample size n is a very small fraction of the total population size 
 N, the likelihood of recapturing an already captured individual is low, so the trials are approximately independent, a key assumption of the binomial distribution. meaning, replacement which is done in Binomial doesn't matter much since even if you replace, the % of recapturing is so low. So you can just use the binomial model when n/N is at most 0.05.
 The binomial distribution is given by
@@ -184,18 +205,76 @@ N = (M⋅n)/x
 
 This equation is used to estimate the total population size based on the proportion of marked individuals recaptured.
 
+![negative_binomial_example.png](../images/negative_binomial_example.png)
+
+The above equation isn't mentioned in the lectures because this course is trash.
+
+Below the EV.
+![negative_binomial.png](../images/negative_binomial.png)
+
+The random variable under question is number of Failures that preceded the rth success. The number of success is fixed as opposed to the binomial model. we're measuring failures.
+
+r is the number of successes that are sought (two female children). chatgpt does a better job explaning this.
 
 
+### Example problem with chatgpt
 
+The problem described asks for the probability that a family has x male children (labeled 'F' for the purpose of this problem, which might be a typographical error as 'F' usually stands for female) before they have exactly two female children ('S'). The assumption is that the probability of having a male child, p, is 0.5.
+
+The negative binomial distribution is given by the formula seen above.
+
+
+X is the number of failures before the r-th success (in this context, 'failures' would be the number of male children born before the second female child).
+
+p is the probability of success on each trial (the probability of a female birth in this case).
+
+r is the number of successes that are sought (two female children).
+
+In the image, they have used x for the number of male children and r is 2 (since the couple wants exactly two female children). So the formula is adjusted as:
+
+
+![negative_binomial_example_1.png](../images/negative_binomial_example_1.png)
+
+
+### Example problem with chatgpt2
+
+P(at most 4 children) so that implies 2 girls and 2 boys or 2 girls and 1 boy or 2 girls and 0 boys. the boys are the failure case.
+
+![negative_binomial_example2.png](../images/negative_binomial_example2.png)
+
+### Connection between negative binomial model and geometric distribution?
+
+The geometric distribution is actually a special case of the negative binomial distribution. While the negative binomial distribution counts the number of failures before a specified number of successes occurs, the geometric distribution counts the number of failures before the first success. In other words, if you set the number of successes r to 1 in a negative binomial distribution, you get a geometric distribution.
+
+
+### Example showing that connection
+
+![negative_binomial_geometric.png](../images/negative_binomial_geometric.png)
+
+if you set r (number of successes) = 1 which means it's the first success of when the drought ends, you get the geometric formula.
+
+![negative_binomial_model_answer_geometric.png](../images/negative_binomial_model_answer_geometric.png)
+
+that shows us how the geometric and negative binomial are connected.
 
 
 ## Poisson distribution
 
 The binomial, hypergeometric, and negative binomial distributions were all derived by starting with an experiment consisting of trials or draws and applying the laws of probability to various outcomes of the experiment. There is no simple experiment on which the Poisson distribution is based, though we will shortly describe how it can be obtained by certain limiting operations
 
+Kind of like the number of arrivals you'll get into a bank over a period of time.
+
+It's often used to approximate the binomial distribution
+
 ![poisson.png](../images/poisson.png)
 
-the above image shows the pmf which is the probability of a value at x. the u (the mean) is a paramter of the poisson distribution.
+Interesting property is that the expected value of Poisson = variance of Poisson = mean.
+
+![poisson_chatgpt.png](../images/poisson_chatgpt.png)
+
+the above image shows the pmf which is the probability of a value at x. the u (the mean) is a parameter of the poisson distribution.
+
+If n is large and p is small, the binomial distribution approaches the poisson distribution which is p(x; mean)
 
 A Poisson distribution is a discrete probability distribution. It gives the probability of an event happening a certain number of times (k) within a given interval of time or space.
 
@@ -207,7 +286,7 @@ You can use a Poisson distribution to predict or explain the number of events oc
 
 You can use a Poisson distribution if:
 
-Individual events happen at random and independently. That is, the probability of one event doesn’t affect the probability of another event.
+Individual events happen at random and independently. That is, the probability of one event doesn't affect the probability of another event.
 You know the mean number of events occurring within a given interval of time or space. This number is called λ (lambda), and it is assumed to be constant.
 When events follow a Poisson distribution, λ is the only thing you need to know to calculate the probability of an event occurring a certain number of times.
 
