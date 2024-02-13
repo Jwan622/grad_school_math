@@ -5,6 +5,16 @@
 - independent events.
 ![independent_events](../images/indepedent_definition.png)
 - demorgan laws of probability. lecture 2.2b in the videos.
+- combinations
+- expected value
+
+
+
+# Formulas to remember
+
+Combination:
+and example
+![combination.png](../images/combination.png)
 
 
 events: 
@@ -23,7 +33,7 @@ events:
 
 Conditional probability = P(A|B) = P(A and B) / P(B) which is the probaiblity that A happens given that b has occurred.
 
-For mutually exclusvie events like with coins, say A is heads and B is tails... P(A|b) = 0 since A and B are mutually exclusive.  = P(A and B) / P(B) = 0 because P(A and B) = 0.
+For mutually exclusive events like with coins, say A is heads and B is tails... P(A|b) = 0 since A and B are mutually exclusive.  = P(A and B) / P(B) = 0 because P(A and B) = 0.
 
 
 Tree diagrams are great ways to see conditional probability. Make them when trying to figure out the probability of something happening given that something else has happened. 
@@ -34,7 +44,7 @@ But what if the events are independent and not conditional on each other? P(A|B)
 
 ![chap_2_independent.png](../images/chap_2_independent.png)
 
-# Example problems to review.
+# Example problems to review
 
 1. Example 2.23
 ![comb_problem_1](../images/combination_problem_1.png)
@@ -106,3 +116,4 @@ demorgan:
 
 conditional probability:
 ![chap_2_conditional.png](../images/chap_2_conditional.png)
+

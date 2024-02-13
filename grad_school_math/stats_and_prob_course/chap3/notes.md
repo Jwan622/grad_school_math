@@ -1,12 +1,71 @@
+# Topics to cover:
+- binomial distribution
+- variance
+- poisson distribution
+- hypergeometric distribution
+- Random Variables
+- PMF probability mass function
+
+
+
+
+
+# Notes
+
+## Random variables
 There are two fundamentally different types of random variables—discrete random variables and continuous random variables.
 
 
 Random variables can be discrete and infinite. The definition of a continuous random variable is confusing but generally it's continuous if the set of possible values is all numbers in a single interval on the number line or infinite in extend -\inf to \inf.
 
+Capitalized too. mapping from the real world to the number line
+the lowercase x is a particular value of X.
+
+X = {1 if you flip heads, 0 and if you flip tails}. 
+Flipping coins has no numbers associated with it until we do the experiment.
+
+The probability distribution of X says how the total probability of 1 is distributed among and allocated to the various possible of lowercase x values.
+
+the PMF (probability mass function) is that. It shows probabilities of each value of x.
+
+### Example
+X is unknown amount of unbroken eggs in a egg carton. 
+{1,2,3,4,5,6,7,8,9,10,11,12}
+It's discrete too.
+
+Notation: p(1) = the probability of the X value 1 = P(X = 1). the probability of the X random value = 1.
+P(x) the probability being assigned to value x in general. 
+
+### Another example2
+we can say that p(1) = 0.2 which represents the p that a customer buys a desktop
+so that P(0) is 0.8 a customer buys a laptop.
+This would be a Bernoulli PMF with 2 points.
+
+the PMF of any Bernoulli can be expressed this way P(0) = 1 - alpha and P(1) = alpha. or P(x,alpha) since alpha is an input. 
+
+
+### Another example
+what about a value up to x? This is the cdf, cumulative distributive function. You add it up.
+
+![cdf.png](../images/cdf.png)
+
+![cdf2.png](../images/cdf2.png)
+
+p(x) is probability mass function, a pmf. but the graph cdf is a cumulative of the pmf. we add up the pmf to get the cdf... we accumulate.
+
+![cdf3.png](../images/cdf3.png)
+
+Just add up P(2) + P(3) + P(4) + P(5)
+
+
+### Another example from videos
+![cdf_3.png](../images/cdf_3.png)
+
+at least 4 lines not in use means either 4 lines not in use, 5 lines not in use, 6 lines not in use. That means 0 lines in use, 1 lines in use, 2 lines in use which is why we add them up.
 
 
 
-# Cumulative probability function
+## Cumulative probability function
 ![cumulative_function.png](../images/cumulative_function.png)
 
 
@@ -19,12 +78,89 @@ When dealing with probabilities, the cdf = 1 - (1 - p)^x which is derived from t
 ![cumulative_function1.png](../images/cumulative_function1.png)
 
 
-**Binomial model?**
+## Binomial model
 The binomial distribution is the approximate probability model for sampling without replacement from a finite dichotomous (S–F) population provided the sample size n is small relative to the population size N; the hypergeometric distribution is the exact probability model for the number of S’s in the sample.
 
 The binomial rv X is the number of S’s when the number n of trials is fixed, whereas the negative binomial distribution arises from fixing the number of S’s desired and letting the number of trials be random.
 
+gotta be independent for each trial. you need to replace most likely for this to happen! If you don't replace, not binomial!
+
+mean: E(x) = np
+V(X) = np(1-p) = npq
+standard deviation = sqrt(npq) where q = 1 - p
+
+## What Is Binomial Distribution?
+Binomial distribution is a statistical distribution that summarizes the probability that a value will take one of two independent values under a given set of parameters or assumptions.
+
+The underlying assumptions of binomial distribution are that there is only one outcome for each trial, each trial has the same probability of success, and each trial is mutually exclusive or independent of one another.
+
+To start, the “binomial” in binomial distribution means two terms—the number of successes and the number of attempts. Each is useless without the other.
+
+Binomial distribution is a common discrete distribution used in statistics, as opposed to a continuous distribution, such as normal distribution. This is because binomial distribution only counts two states, typically represented as 1 (for a success) or 0 (for a failure), given a number of trials in the data. Binomial distribution thus represents the probability for x successes in n trials, given a success probability p for each trial.
+
+![pmf_binomial.png](../images/pmf_binomial.png)
+
+that's the PMF for a binomial model.
+
+### example of binomial using the chart
+
+![binomial_using_chart.png](../images/binomial_using_chart.png)
+###  KEY TAKEAWAYS
+Binomial distribution is a statistical probability distribution that summarizes the likelihood that a value will take one of two independent values under a given set of parameters or assumptions.
+
+The underlying assumptions of binomial distribution are that there is only one outcome for each trial, that each trial has the same probability of success, and that each trial is mutually exclusive or independent of one another.
+
+Binomial distribution is a common discrete distribution used in statistics, as opposed to a continuous distribution, such as normal distribution.
+
+A binomial distribution's expected value, or mean, is calculated by multiplying the number of trials (n) by the probability of successes (p), or `n × p`.
+
+![binomial_formula.png](../images/binomial_formula.png)
+
+The binomial distribution formula helps to check the probability of getting “x” successes in “n” independent trials of a binomial experiment. To recall, the binomial distribution is a type of probability distribution in statistics that has two possible outcomes. In probability theory, the binomial distribution comes with two parameters n and p.
+
+The probability distribution becomes a binomial probability distribution when it meets the following requirements.
+
+- Each trial can have only two outcomes or the outcomes that can be reduced to two outcomes. These outcomes can be either a success or a failure.
+- The trails must be a fixed number.
+- The outcome of each trial must be independent of each others.
+- And the success of probability must remain the same for each trial.
+
+
+![binomial_distribution1.png](../images/binomial_distribution1.png)
+
+the formula involves combinations. and the right side is the number of successes * number of failures.
+
+
+### Examples.
+
+Example 1:
+
+A coin is tossed 12 times. What is the probability of getting exactly 7 heads?
+
+Solution:
+Given that a coin is tossed 12 times. (i.e) n= 12
+Thus, a probability pf gettig head in single toss = ½. (i.e) p = ½.
+So, 1-p = 1-½ = ½.
+We know that the binomial probability distribution is `P(r) = nCr · pr (1 − p)n−r`.
+Now, we have to find the probability of getting exactly 7 heads.(i.e) r = 7.
+Substituting the values in the binomial distribution formula, we get:
+
+```
+P(7) = 12C7 · (½)7 (½)12−7
+P(7) =  792· (½)7 (½)5
+P(7) = 792.(½)12
+P(7) = 792 (1/4096)
+P(7) = 0.193
+```
+Therefore, the probability of getting exactly 7 heads is 0.193.
+
 ## Hypergeometric distribution
+
+binomial is without replacement and when n is small relative to N (population size)
+
+hypergeometric is the exact model of number of successes in the sample and not just an approximation. What does it mean by exact? very similar to binomial. population is N or finite, withoiut replacement acccording to my textbook, each individual is S or F and teh random variable ix X which is random successes from the sample.
+
+![hypergeometric.png](../images/hypergeometric.png)
 
 it is used when sampling without replacement but binomial is used for sampling with replacement or without replacement if the sample is very small relative to population size. That's because the chance of repicking is so small when n/N
 
@@ -119,3 +255,16 @@ Where:
 
 P(X = k) represents the probability of observing exactly k events.
 λ is the average rate of events occurring within the given interval.
+
+
+## Expected value:
+- the EV may not even be a possible value. like the EV of a dice that's fair is 3.5 but that's not a real value
+
+
+## Bernouli rnadom variable
+the EV = sum of x times p(x)
+
+
+## Example.
+
+Do number 39.
