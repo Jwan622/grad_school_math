@@ -1,10 +1,15 @@
 1. "Airlines sometimes overbook flights. Suppose that for a plane with 50 seats, 55 passengers have tickets. Define the random variable Y as the number of ticketed passengers who actually show up for the flight. The probability mass function of Y appears in the table on page 104 question 12. If you are the third person on the standby list (which means you will be the third one to get on the plane if there are any seats available after all ticketed passengers have been accommodated), what is this probability you will be able to take the flight? "
+topic:
+cdf and pmf
 
 Work:
 To calculate the probability that you, being the third person on the standby list, can take the flight, we need to consider the probability that at least 3 ticketed passengers do not show up. Since the plane has 50 seats and there are 55 ticketed passengers, we need to find the sum of the probabilities that at most 47 ticketed passengers show up (which corresponds to 8 or more passengers not showing up).
 
 Using the probability mass function (pmf) given for Y (the number of ticketed passengers who show up), we calculate:
-P(Y≤47) = P(Y=45) + P(Y=46) + P(Y=47) = 0.05 + 0.1 + 0.12 = 0.27
+P(Y ≤ 47) = P(Y = 45) + P(Y = 46) + P(Y = 47) = 0.05 + 0.1 + 0.12 = 0.27
+
+answer:
+0.27
 
 
 2. "Airlines sometimes overbook flights. Suppose that for a plane with 50 seats, 55 passengers have tickets. Define the random variable Y as the number of ticketed passengers who actually show up for the flight. The probability mass function of Y appears in the table on page 104 question 12. If you are the first person on the standby list (which means you will be the first one to get on the plane if there are any seats available after all ticketed passengers have been accommodated), what is the probability that you will be able to take the flight? " 
@@ -14,31 +19,40 @@ For you to be able to take the flight as the first person on the standby list, a
 
 
 P(Y≤49) = P(Y=45) + P(Y=46) + P(Y=47) + P(Y=48) + P(Y=49)
-= 
+= 0.05 + 0.1 + 0.12 + 0.14 + 0.26 = 0.66
+
+answer:
+0.66
 
 
 
 
 3. "Some parts of California are particularly earthquake-prone. Suppose that in one metropolitan area, 25% of all homeowners are insured against earthquake damage. Four homeowners are to be selected at random; let X denote the number among the four who have earthquake insurance. What is the most likely value for X? [Hint: Let S denote a homeowner who has insurance and F one who does not. Then one possible outcome is SFSS, with probability (.25)(.75)(.25)(.25) and associated X value 3. There are 15 other outcomes.]"
 
-work:
 
+topic:
+building the PMF here for X which is number of people who have insurance.
+binomial distribution
+
+work:
 We're looking at a binomial distribution scenario where:
 
 The number of trials (n) is 4 (since four homeowners are selected),
 The probability of success (p), which in this case is a homeowner having earthquake insurance, is 0.25,
+n and p are the inputs to the binomial distribution
 The random variable X represents the number of successes, which in this case is the number of homeowners with insurance among the four selected.
 
 For the first question about homeowners and earthquake insurance, we are looking for the mode of the binomial distribution with parameters n=4 (number of trials or homeowners) and 
 p=0.25 (probability of success, which in this case is a homeowner having insurance).
 
 use the probability mass function for the binomial distribution:
-
 nCk * p^k ( 1- p )^(n-k) is the formula. turns out 1 has the highest probability. n = 4 and p = 0.25
+
+![chap_3_binomial_problem3.png](../images/chap_3_binomial_problem3.png)
 
 ![chap_3_problem_set1.png](../images/chap_3_problem_set1.png)
 
-highest is x = 1
+highest is x = 1 which means out of 4, the most likely value for X, the number of insurance holders, is 1.
 
 answer:
 1
@@ -61,7 +75,7 @@ P(4) means 2 individuals and 1 couple are late OR 2 couples are late: (0.4)^2 * 
 P(5) = 0.1382
 P(6) means 2 individuals and 2 couples are late OR 3 coupels are late: 0.0691
 
-notice the difference between AND and OR and that determines whether we add or subract.
+notice the difference between AND and OR and that determines whether we add or subtract.
 
 etc. You have to calculate the pmf up to 6 which then allows you to calculate the cdf becaus the answer is F(6) - F(1) which is 0.9591 - 0.1813 = 0.7778.
 
@@ -70,10 +84,15 @@ https://www.vaia.com/en-us/textbooks/math/probability-and-statistics-for-enginee
 
 5. "The pmf of the amount of memory X (GB) in a purchased flash drive was given in the table found on page 113 exercise number 29. Compute V(X) using the shortcut formula"
 
-work:
-formula: V(X)=E(X^2) - (E(X))^2
+topic:
+variance shortcut formula.
 
-we need to calculate E(x) first. we also need E(X^2)
+work:
+formula: V(X) = E(X^2) - (E(X))^2
+
+Tips: the right side is the square of the EV. the left side involves squaring each value so we need the sum of square. But then we need to take the EV of that too so divide at some point. you often forget to divide.
+
+we need to calculate E(x) first. we also need E(X^2). This is needed to use the shortcut variance formula.
 
 x=1,2,4,8,16
 p(x) = 0.05 , 0.10 , 0.35 , 0.40 , 0.10
@@ -84,10 +103,15 @@ to find E(X^2) you do: (1^2 * 0.05) + (2^2 * 0.10) + (4^2 * 0.35) = 57.25
 
 shortcut formula: 57.25 - (6.25)^2 = 57.25 - 41.60 = 15.6475
 
-
 6. Same question as above but using variance formula
 
 7. "An appliance dealer sells three different models of upright freezers having 13.5, 15.9, and 19.1 cubic feet of storage space, respectively. Let X = the amount of storage space purchased by the next customer to buy a freezer. Suppose that X has the pmf denoted on page 113 exercise number 32. What is the variance of the price 25X - 8.5 paid by the next customer?"
+
+
+topics:
+linear transformation of variance.
+also calculating EV using weight probabilities.
+
 
 work: 
 the point of this question is to relate variance to linear transformation of variance.
@@ -95,8 +119,12 @@ the point of this question is to relate variance to linear transformation of var
 Note that the cubic feet of the freezer is input to the price function.
 
 If X is a random variable and Y is a transformed variable such that Y = aX + b, then the expected value and variance of Y are given by:
+```
 E(Y) = aE(X) + b
 V(Y) = a^2 * V(X)
+```
+
+notice we square the a term! So even though we linearly transform the function by a, the variance is increased by a^2
 
 Let's calculate the variance of the price 25X − 8.5, the expected value of X^2 , and the variance V(X). Note the a = 25
 
@@ -105,16 +133,23 @@ X = 13.5 with P(X) = 2/10
 X = 15.9 with P(X) = 5/10
 X = 19.1 with P(X) = 3/10
 
-And alos remmeber the variance of X with the shortcut formula is:
+And also remember the variance of X with the shortcut formula is:
 
 `V(X) = E(X^2) - [E(X)]^2`
 
 So let's calculate intermediate steps to get the shortcut variance:
 
 E(X) = 13.5 * 0.2 + 15.9 * 0.5 + 19.1 * 0.3 = 2.7 + 7.95 + 5.75 = 16.38
+
 E(X^2) = 13.5^2 * 0.2 + 15.9^2 * 0.5 + 19.1^2 * 0.3 = 36.45 + 126.405 + 109.443 = 272.298
-Variance = 272.298 - (16.38)^2 = 3.994 via shortcut variacne formula.
-The variance transformed by 25X - 8.5 is 25^2 * V(X) = 625 * 3.994 = 2496
+
+Variance(X) = 272.298 - (16.38)^2 = 3.994 via shortcut variance formula.
+
+The variance(Y) transformed by by the linear equation 25X - 8.5 is 25^2 * V(X) = 625 * 3.994 = 2496
+
+Notes:
+When you scale a random variable, the spread of its distribution is also scaled by that factor. However, because variance is a measure of the spread of a distribution squared, when you apply the scaling factor a to the random variable
+X, the variance is scaled by the factor 
 
 ![chap3_assignment_variance.png](../images/chap3_assignment_variance.png)
 
@@ -129,11 +164,16 @@ see work in 7
 10. "The n candidates for a job have been ranked 1,2,3,...,n. Let X = the rank of a randomly selected candidate, so that X has pmf as denoted on page 114 exercise number 37. (this is called the discrete uniform distribution). Compute E(X) using the shortcut formula for n=7. [Hint: The sum of the first n positive integers is n(n+1)/2, whereas the sum of their squares is n(n+1)(2n+1)/6.]"
 
 Okay so for n=7, they give us that the sum of the first n positive integers is 7 * 8 / 2 = 28
+Now we have to divide by 7 because they are equally likely to be picked so the weight/probability is all equal for each candidate
+
 So EV = 28/7 = 4
 
-So the sum of squares is 7 * 8 * 15 / 6 = 140
+So the sum of squares is 7 * 8 * 15 / 6 = 140 when n = 7
+140/7 = 20
 
-So by variance shortcut formula: 140 - 16 = 124 = variance when n = 7
+So by variance shortcut formula: 20 - 16 = 4 = variance when n = 7.
+
+answer: 4
 
 11. "The n candidates for a job have been ranked 1,2,3,...,n. Let X = the rank of a randomly selected candidate, so that X has pmf as denoted on page 114 exercise number 37. (this is called the discrete uniform distribution). Compute E(X) using the shortcut formula for n=8. [Hint: The sum of the first n positive integers is n(n+1)/2, whereas the sum of their squares is n(n+1)(2n+1)/6.
 
@@ -143,20 +183,26 @@ just plug into the formula
 
 36/8 = 4.5
 
+answer:
+4.5
 
 12. "The n candidates for a job have been ranked 1,2,3,...,n. Let X 5 the rank of a randomly selected candidate, so that X has pmf as denoted on page 114 exercise number 37. (this is called the discrete uniform distribution). Compute V(X) using the shortcut formula for n=8. [Hint: The sum of the first n positive integers is n(n+1)/2, whereas the sum of their squares is n(n+1)(2n+1)/6.]"
 
-same as 13 but plug in n = 8
+same as 13 but plug in n = 8 = 8 * 9 * 17 / 6 = 204
+sum of square EV = 204 / 8 = 25.5
+EV squared = 16.25
+V(8) = 25.5 - 16.25 = 9.25
 
-answer: 183.75
-
-13. "The n candidates for a job have been ranked 1,2,3,...,n. Let X = the rank of a randomly selected candidate, so that X has pmf as denoted on page 114 exercise number 37. (this is called the discrete uniform distribution). Compute V(X) using the shortcut formula for n=7. [Hint: The sum of the first n positive integers is n(n+1)/2, whereas the sum of their squares is n(n+1)(2n+1)/6.]"
-
+13. "The n candidates for a job have been ranked 1,2,3,...,n. Let X = the rank of a randomly selected candidate, so that X has pmf as denoted on page 114 exercise number 37. (this is called the discrete uniform distribution). Compute V(X) using the shortcut formula for n=7. [Hint: The sum of the first n positive integers is n(n+1)/2, whereas the sum of their squares is n(n+1)(2n+1)/6."
 
 
 use shortcut formula for n = 7
-sum of squares = 140 because 7 * 8 * 15 / 6 = 140
-E(x^2) - E(X)^2 = 140 - 16 = 124
+V(7) = E(x^2) - [E(X)]^2
+sum of squares = 7 * 8 * 15 / 6 = 140
+sum of squares EV = 140 / 7 = 20
+EV squared = 4^2 = 16
+
+E(x^2) - E(X)^2 = 20 - 16 = 4
 
 
 

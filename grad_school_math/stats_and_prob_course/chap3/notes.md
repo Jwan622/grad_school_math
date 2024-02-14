@@ -12,6 +12,7 @@
 
 # Notes
 
+
 ## Random variables
 There are two fundamentally different types of random variables—discrete random variables and continuous random variables.
 
@@ -163,6 +164,8 @@ Therefore, the probability of getting exactly 7 heads is 0.193.
 ## Hypergeometric distribution
 
 binomial is without replacement and when n is small relative to N (population size)
+
+This hypergeometric distribution is appropriate here because we're dealing with a finite population (students submitting projects) without replacement (once a project is selected for grading, it's not put back into the pool). the hypergeometric distribution is used for Question 23 in the assignment because it models scenarios where you're drawing from a finite population without replacement, aiming to find the probability of a certain number of successes (in this case, projects from the second section) within a fixed sample size.
 
 from the video: Hypergeometric is the exact model of number of successes in the sample and not just an approximation. What does it mean by exact? very similar to binomial. population is N or finite, withoiut replacement acccording to my textbook, each individual is S or F and teh random variable ix X which is random successes from the sample.
 
