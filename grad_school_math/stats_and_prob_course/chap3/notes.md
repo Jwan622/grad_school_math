@@ -2,14 +2,12 @@
 - binomial distribution
 - binomial model
 - variance
+- variance shortcut formula
 - poisson distribution
 - hypergeometric distribution
 - Random Variables
 - PMF probability mass function
 - poisson process
-
-
-
 
 
 # Notes
