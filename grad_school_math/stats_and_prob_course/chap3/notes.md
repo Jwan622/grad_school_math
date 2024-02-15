@@ -303,6 +303,26 @@ In most distributions, the mean is represented by µ (mu) and the variance is re
 
 While the Binomial distribution deals with experiments involving a fixed number of independent trials, the Poisson distribution focuses on events occurring over a fixed interval. Understanding their differences and knowing when to apply each distribution is crucial for accurate data analysis and modelling.
 
+The Poisson distribution and the binomial distribution are both discrete probability distributions, but they model different kinds of processes.
+
+### Binomial Distribution:
+The binomial distribution models the number of successes in a fixed number of independent trials, with each trial having two possible outcomes (usually termed as "success" or "failure").
+
+For a binomial distribution, the probability of success p is constant for each trial.
+
+The number of trials n is fixed in advance, and each trial is independent of the others.
+The binomial distribution is used when you are interested in the number of successes in a given number of trials, like flipping a coin n times and counting the number of heads (successes).
+The typical question you might answer with a binomial distribution is, "What's the probability of getting k heads in n coin tosses?"
+
+### Poisson Distribution:
+
+The Poisson distribution models the number of events occurring in a fixed interval of time or space, given that these events happen with a known constant mean rate and independently of the time since the last event.
+
+It does not have a fixed number of trials, but rather a continuous measurement where events occur at a certain rate.
+
+The Poisson distribution is particularly useful for modeling events that occur randomly and independently over time or space, such as the number of emails you receive in a day or the number of stars in a given volume of space.
+A typical question for a Poisson distribution might be, "What's the probability of receiving k emails in a day if you usually receive an average of � λ emails per day?"
+
 ### Application Examples
 Let's explore some practical examples to better understand the applications of these distributions.
 
