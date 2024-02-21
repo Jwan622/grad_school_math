@@ -193,19 +193,26 @@ answer: 0.7977
 15. "The Rockwell hardness of a metal is determined by impressing a hardened point into the surface of the metal and then measuring the depth of penetration of the point. Suppose the Rockwell hardness of a particular alloy is normally distributed with mean 70 and standard deviation 3. (Rockwell hardness is measured on a continuous scale.) If the acceptable range is between 67 and 75 and the hardness of each of ten randomly selected specimens is independently determined, what is the expected number of acceptable specimens among the ten? Compute to at least three decimal places."
 
 work:
+so mean = 70
+std dev = 3
 
-To find the expected number of acceptable specimens, we first need to find the probability of a specimen being acceptable. An acceptable specimen has a Rockwell hardness between 67 and 75. 
-First, let's find the z-scores for the given hardness values (67 and 75) using the standard normal distribution: 
+To find the expected number of acceptable specimens, we first need to find the probability of a specimen being acceptable. An acceptable specimen has a Rockwell hardness between 67 and 75.
+
+First, let's find the z-scores for the given hardness values (67 and 75) using the standard normal distribution:
+
 For 67: z1 = (X - μ) / σ z1 = (67 - 70) / 3 
 so  z1 ≈ -1
 For 75: z2 = (X - μ) / σ z2 = (75 - 70) / 3 
 so z2 ≈ 1.67
+
 Now, we can find the probability using a standard normal table or calculator:P(67 <= X <= 75) = 
-P(-1 <= Z <= 1.67) 
+P(-1 <= Z <= 1.67) = 
 P(67 <= X <= 75) = 
 P(Z <= 1.67) - P(Z <= -1) 
+using z table
 P(67 <= X <= 75) ≈ 0.9525 - 0.1587 
 P(67 <= X <= 75) ≈ 0.7938
+
 Now, let's find the expected number of acceptable specimens. Since the hardness of each of ten randomly selected specimens is independently determined, we can multiply the probability of a specimen being acceptable by the number of specimens (10) to find the expected number of acceptable specimens:
 Expected number of acceptable specimens = Number of specimens * Probability of a specimen being acceptable 
 Expected number of acceptable specimens = 10 * 0.7938 
@@ -217,26 +224,259 @@ answer:
 
 
 16. Suppose that 10% of all steel shafts produced by a certain process are nonconforming but can be reworked (rather than having to be scrapped). Consider a random sample of 200 shafts, and let X denote the number among these that are nonconforming and can be reworked. What is the (approximate) probability that X is Less than 30? Compute to at least four decimal places."
+https://homework.study.com/explanation/suppose-that-10-of-all-steel-shafts-produced-by-a-certain-process-are-nonconforming-but-can-be-reworked-rather-than-having-to-be-scrapped-consider-a-random-sample-of-200-shafts-and-let-x-denote-t.html
 
-work: To solve this problem, we will use the Central Limit Theorem (CLT) which states that the distribution of the sum (or average) of a large number of independent, identically distributed random variables approaches a normal distribution.
+work: we need to approximate the binomial model with the normal distribution so we need to subtract 0.5 to 30.
 
-In this case, the number of nonconforming shafts in a sample of 200, X, can be modeled as a binomial random variable with parameters n = 200 (the sample size) and p = 0.1 (the probability of a shaft being nonconforming).
+P(X < 30) is approx = P(Z <= (29.5 - 20) / 4.2426) = P(Z < 2.2392) = 0.9874
 
-However, for large n and small p, the binomial distribution can be approximated by a normal distribution with mean μ = n*p and variance σ^2 = n*p*(1-p).
 
-So, for X, we have:
+17. "Let X denote the distance (m) that an animal moves from its birth site to the first territorial vacancy it encounters. Suppose that for banner-tailed kangaroo rats, X has an exponential distribution with parameter lambda = .01386 (as suggested in the article 'Competition and Dispersal from Multiple Nests,' Ecology, 1997: 873-883). What is the probability that the distance is between 100 and 200 m? Compute to at least four decimal places."
 
-μ = n*p = 200 \* 0.1 = 20
-σ = sqrt(n*p*(1-p)) = sqrt(200 \* 0.1 \* 0.9) ≈ 4.24
+topic: exponential distribution
 
-We want to find P(X < 30), but first, we need to standardize X:
+work:
+To calculate the probability for an exponential random variable, we can use the cumulative distribution function (CDF) of the exponential distribution. The CDF of an exponential distribution with parameter λ is given by:
 
-Z = (X - μ) / σ = (X - 20) / 4.24
+CDF(X ≤ x) = 1 - e^(-λx)
+that formula is on page 166
 
-Now, we want to find P(Z < (30 - 20) / 4.24) = P(Z < 2.36) ≈ 0.9909
+First, let's find the cumulative distribution functions for X = 100 and X = 200:
+CDF(X ≤ 100) = 1 - e^(-0.01386 * 100) 
+CDF(X ≤ 100) ≈ 0.1262
+CDF(X ≤ 200) = 1 - e^(-0.01386 * 200) 
+CDF(X ≤ 200) ≈ 0.2535
 
-However, this is a cumulative distribution function (CDF) value for the standard normal distribution. To find the probability that X is less than 30, we need to subtract the CDF value from 1:
+Now, we can find the probability that the distance is between 100 and 200 m:
+P(100 < X < 200) = CDF(X ≤ 200) - CDF(X ≤ 100) 
+P(100 < X < 200) = 0.2535 - 0.1262 
+P(100 < X < 200) ≈ 0.1273
+So, the probability that the distance is between 100 and 200 m is approximately 0.1273, to at least four decimal places.
 
-P(X < 30) = 1 - P(Z < 2.36) ≈ 1 - 0.9909 = 0.0091
+answer:
+0.1273
 
-Therefore, the approximate probability that X is less than 30 is 0.0091, or 0.0091 \* 100% = 0.91%, when rounded to four decimal places.
+18. "Let X denote the distance (m) that an animal moves from its birth site to the first territorial vacancy it encounters. Suppose that for banner-tailed kangaroo rats, X has an exponential distribution with parameter lambda = .01386 (as suggested in the article 'Competition and Dispersal from Multiple Nests,' Ecology, 1997: 873-883). What is the probability that the distance is at most 200 m? Compute to at least four decimal places."
+
+topic: exponential function
+answer: https://www.vaia.com/en-us/textbooks/math/probability-and-statistics-for-engineering-and-sciences-9th/continuous-random-variables-and-probability-distributions/q60e-let-x-denote-the-distance-rmm-that-an-animal-moves-from/
+
+work:
+To calculate the probability that the distance is at most 200 m, we can use the cumulative distribution function (CDF) of the exponential distribution. The CDF of an exponential distribution with parameter λ is given by:
+
+CDF(X ≤ x) = 1 - e^(-λx)
+
+Now, we can find the cumulative distribution function for X = 200:
+
+CDF(X ≤ 200) = 1 - e^(-0.01386 * 200)
+CDF(X ≤ 200) ≈ 0.2535
+
+So, the probability that the distance is at most 200 m is approximately 0.2535, to at least four decimal places.
+
+
+answer:
+0.2535
+
+
+19. https://www.vaia.com/en-us/textbooks/math/probability-and-statistics-for-engineering-and-sciences-9th/continuous-random-variables-and-probability-distributions/q62e-the-article-microwave-observations-of-daily-antarctic-s/
+
+
+
+
+20. Suppose the proportion X of surface area in a randomly selected quadrat that is covered by a certain plant has a standard beta distribution with alpha= 5 and beta= 2. What is the expected proportion of the sampling region not covered by the plant? Compute to at least three decimal places.
+answer: 
+topic: beta distribution
+work:
+
+To find the expected proportion of the sampling region not covered by the plant, we first need to find the expected value of the standard beta distribution with α = 5 and β = 2. The expected value of a standard beta distribution is given by:
+
+Expected value = α / (α + β)
+
+For our problem, α = 5 and β = 2, so:
+
+Expected value = 5 / (5 + 2) = 5 / 7 ≈ 0.714
+
+Now, since the expected proportion of the surface area covered by the plant is 0.714, the expected proportion of the sampling region not covered by the plant is:
+
+Expected proportion not covered = 1 - Expected proportion covered
+Expected proportion not covered = 1 - 0.714
+Expected proportion not covered ≈ 0.286
+
+So, the expected proportion of the sampling region not covered by the plant is approximately 0.286, to at least three decimal places.
+
+answer:
+0.286
+
+
+
+21. Suppose the proportion X of surface area in a randomly selected quadrant that is covered by a certain plant has a standard beta distribution with alpha= 5 and beta= 2. Compute P(.2 <= X <= .4) to at least four decimal places.
+
+
+topic: beta distribution cdf
+
+work:
+To calculate the probability P(0.2 ≤ X ≤ 0.4) for a standard beta distribution with α = 5 and β = 2, we can use the cumulative distribution function (CDF) of the beta distribution. The CDF of a standard beta distribution is given by:
+
+CDF(X ≤ x) = I(x; α, β)
+
+where I(x; α, β) is the regularized incomplete beta function.
+
+Now, we can find the cumulative distribution function for X = 0.2 and X = 0.4:
+
+CDF(X ≤ 0.2) = I(0.2; 5, 2)
+CDF(X ≤ 0.2) ≈ 0.0517
+
+CDF(X ≤ 0.4) = I(0.4; 5, 2)
+CDF(X ≤ 0.4) ≈ 0.2638
+
+Now, we can find the probability that the proportion of surface area covered by the plant is between 0.2 and 0.4:
+
+P(0.2 ≤ X ≤ 0.4) = CDF(X ≤ 0.4) - CDF(X ≤ 0.2)
+P(0.2 ≤ X ≤ 0.4) = 0.2638 - 0.0517
+P(0.2 ≤ X ≤ 0.4) ≈ 0.2121
+
+So, the probability that the proportion of surface area covered by the plant is between 0.2 and 0.4 is approximately 0.2121, to at least four decimal places.
+
+22. Suppose the time spent by a randomly selected student who uses a terminal connected to a local time-sharing computer facility has a gamma distribution with mean 20 min and variance 80 min^2. What is the probability that a student uses the terminal for at most 24 min? Compute to at least three decimal places.
+
+topic: gamma distribution and also using hte tables in appendix to solve this
+
+formulas on page 168
+work:
+the mean is given by e(x) = αβ and the variance is given by Var(X) = αβ^2.
+
+first we need to find alpha and beta
+Given that the mean is 20 minutes and the variance is 80 minutes^2, we have:
+
+20 = αβ
+80 = αβ^2
+
+From the first equation, we can express α as:
+
+α = 20/β
+
+Now, substitute α into the second equation:
+
+80 = (20/β)β^2
+80 = 20β
+β = 4
+
+Now, we can find α:
+
+α = 20/β = 20/4 = 5
+
+So, the gamma distribution has parameters α = 5 and β = 4.
+
+Now, we can find the cumulative distribution function (CDF) of the gamma distribution. The CDF of a gamma distribution is given by:
+
+P(X ≤ 24) = F(24;α,β) = F(24/β;α)
+
+plugging in we get
+= F(24/4;5) 
+Suppose the time spent by a randomly selected student who uses a terminal connected to a local time-sharing computer facility has a gamma distribution with mean 20 min and variance 80 min^2. What is the probability that a student uses the terminal for at most 24 min? Compute to at least three decimal places.
+
+topic: gamma distribution and also using hte tables in appendix to solve this
+
+formulas on page 168
+work:
+the mean is given by e(x) = αβ and the variance is given by Var(X) = αβ^2.
+
+first we need to find alpha and beta
+Given that the mean is 20 minutes and the variance is 80 minutes^2, we have:
+
+20 = αβ
+80 = αβ^2
+
+From the first equation, we can express α as:
+
+α = 20/β
+
+Now, substitute α into the second equation:
+
+80 = (20/β)β^2
+80 = 20β
+β = 4
+
+Now, we can find α:
+
+α = 20/β = 20/4 = 5
+
+So, the gamma distribution has parameters α = 5 and β = 4.
+
+Now, we can find the cumulative distribution function (CDF) of the gamma distribution. The CDF of a gamma distribution is given by:
+
+P(X ≤ 24) = F(24;α,β) = F(24/β;α)
+
+plugging in we get
+= F(24/4;5) 
+= F(6;5) 
+= 0.7149
+
+answer:
+0.7149
+
+We divide 24 by β (which is 4) because the argument of the cumulative distribution function (CDF) of the gamma distribution should be a dimensionless quantity. In this case, we want to find the probability that the time spent by a student using the terminal is at most 24 minutes, but the parameter β has units of minutes. To make the argument of the CDF dimensionless, we divide the time by the scale parameter β. This is a common practice when working with continuous probability distributions.So, instead of using 24 as the argument of the CDF, we use 24/β = 24/4 = 6, which is a dimensionless quantity.
+
+
+= F(6;5)
+
+look it up in appendex a.4
+= 0.715
+
+answer:
+0.715
+
+
+
+23. Suppose the time spent by a randomly selected student who uses a terminal connected to a local time-sharing computer facility has a gamma distribution with mean 20 min and variance 80 min^2. What are the values of alpha?
+
+work:
+Given that the mean is 20 minutes and the variance is 80 minutes^2, we have:
+
+20 = αβ
+80 = αβ^2
+
+From the first equation, we can express α as:
+
+α = 20/β
+
+Now, substitute α into the second equation:
+
+80 = (20/β)β^2
+80 = 20β
+β = 4
+
+Now, we can find α:
+
+α = 20/β = 20/4 = 5
+
+So, the gamma distribution has parameters α = 5 and β = 4.
+
+
+answer:
+5
+
+
+24. The lifetime X (in hundreds of hours) of a certain type of vacuum tube has a Weibull distribution with parameters alpha = 2 and beta = 3. Compute E(X) to at least three decimal places.
+
+video 7:11 in the lectures is useful here:
+![chap4_assignment_weibull_problem.png](../images/chap4_assignment_weibull_problem.png)
+
+So remember mean = B * gamma (1 + 1/alpha)
+and remember gamma(k) = (k-1)gamma(k-1)
+= 3 * gamma (1.5)
+= 3 * 1/2 * gamma(1/2)
+= 3 * 1/2 * gamma(1/2) = 3 * 1/2 * sqrt(pi) = 
+
+
+answer:
+2.659
+
+
+25. The lifetime X (in hundreds of hours) of a certain type of vacuum tube has a Weibull distribution with parameters alpha= 2 and beta= 3. Compute P(1.5 <= X <= 6) to at least three decimal places.
+
+formula on page 173.
+
+![chap4_assignment_weibull_cdf.png](../images/chap4_assignment_weibull_cdf.png)
+
+answer: 0.7605
