@@ -1,4 +1,4 @@
-1. "The weekly demand for propane gas (in 1000s of gallons) from a particular facility is an rv X, with the pdf on page 151 exercise number 22. Which of the following is the cdf of X in the interval 1 <= x <= 2."
+**1.**"The weekly demand for propane gas (in 1000s of gallons) from a particular facility is an rv X, with the pdf on page 151 exercise number 22. Which of the following is the cdf of X in the interval 1 <= x <= 2."
 
 topic: cdf
 
@@ -6,22 +6,27 @@ work:
 
 To find the cumulative distribution function (CDF) of X for the interval 1 ≤ x ≤ 2 based on the given probability density function (pdf), we need to integrate the pdf over the interval from the lower bound (which is 1) to x.
 
-since the pdf is only defined for 1 ≤ x ≤ 2, we cannot find the cdf for x < 1. Instead, we will find the cdf for the interval [1, x]:F(x) = P(X ≤ x) = 
-∫[pdf(t) dt] from 1 to x
-Now, we will compute the integral:
-F(x) = ∫[2(1 - 1/t^2) dt] from 1 to x (reember integral of 1/t^2 is just - 1/t) 
-F(x) = [2t + 2/t] from 1 to x
-then plug in x and 1
-F(x) = (2x + 2/x) - (2 + 2/1) 
-F(x) = 2x + 2/x - 4
-So, the cdf of X for the interval 1 ≤ x ≤ 2 is:
+since the pdf is only defined for 1 ≤ x ≤ 2, we cannot find the cdf for x < 1. Instead, we will find the cdf for the interval [1, x]:
 
-answer:
-F(x) = 2x + 2/x - 4
+F(x) = P(X ≤ x) =   
+∫[pdf(t) dt] from 1 to x  
+
+Now, we will compute the integral:  
+F(x) = ∫[2(1 - 1/t^2) dt] from 1 to x (remember integral of 1/t^2 is just - 1/t)   
+F(x) = [2t + 2/t] from 1 to x
+
+then plug in x and 1  
+F(x) = (2x + 2/x) - (2 + 2/1)   
+F(x) = 2x + 2/x - 4  
+So, the cdf of X for the interval 1 ≤ x ≤ 2 is:  
+
+answer:  
+F(x) = 2x + 2/x - 4  
 
 that's the cdf given the pdf in the question./
 
-2. "The article 'Reliability of Domestic-Waste Biofilm Reactors' (J. of Envir. Engr., 1995: 785-790) suggests that substrate concentration (mg/cm^3) of influent to a reactor is normally distributed with mu = .30 and sigma = .06. Which statement characterizes the largest 5% of all concentration values?"
+---------------
+**2.**"The article 'Reliability of Domestic-Waste Biofilm Reactors' (J. of Envir. Engr., 1995: 785-790) suggests that substrate concentration (mg/cm^3) of influent to a reactor is normally distributed with mu = .30 and sigma = .06. Which statement characterizes the largest 5% of all concentration values?"
 
 work:
 
@@ -35,6 +40,7 @@ c = μ + (z × σ)
 
 where
 z is the z-score corresponding to the 95th percentile.
+we multiply the std_dev by the z score of 1.645 to convert the standard normal to the nonnormal. We want to find the actual value here that corresponds to the z-score of 1.645.
 
 The question provides us with two possible z-scores: +1.645 and -1.645. Since we are looking for the 95th percentile, which is in the upper tail of the distribution, we will use the positive z-score, which is +1.645.
 
