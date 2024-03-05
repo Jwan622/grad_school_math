@@ -159,6 +159,8 @@ The Method of Moments is particularly useful because it's straightforward and on
 
 ## Method of maxiumum likelihood (MLE)
 
+Maximizing the Likelihood: The principle of maximum likelihood estimation says that the best estimate for the parameters u and σ are those that maximize the likelihood function, i.e., make the observed data most likely.
+
 When using Maximum Likelihood Estimation (MLE) to estimate the parameters of a distribution, taking the logarithm of the likelihood function, thereby creating the log-likelihood function, is a common and very useful step. Here are the reasons why:
 
 1. **Simplification of Multiplication:** The likelihood function often involves the product of many probability density functions (PDFs) or probability mass functions (PMFs), especially when dealing with independent and identically distributed (i.i.d.) samples. Products can become very small and lead to numerical underflow on computers. Logarithms turn these products into sums, which are easier to work with both analytically and numerically.
