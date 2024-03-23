@@ -196,3 +196,5 @@ Then, apply the formula: the 25th percentile would correspond to
 Solving for i gives:
 i = 25/100 × 10 + 0.5 = 3
 So, the third-smallest value in your ordered dataset is the 25th percentile. However, because we don't have a 2.5th data point, we consider the third data point (i=3) as the 25th percentile after making the adjustment by subtracting 0.5.
+
+![chap_4_prob_plot.png](images/chap_4_prob_plot.png)
