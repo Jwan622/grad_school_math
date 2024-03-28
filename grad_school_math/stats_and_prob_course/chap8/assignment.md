@@ -71,6 +71,7 @@ t stat = 0.774
 5. "With domestic sources of building supplies running low several years ago, roughly 60,000 homes were built with imported Chinese drywall. According to the article ""Report Links Chinese Drywall to Home Problems"" (New York Times, Nov. 24, 2009), federal investigators identified a strong association between chemicals in the drywall and electrical problems, and there is also strong evidence of respiratory difficulties due to the emission of hydrogen sulfide gas. An extensive examination of 51 homes found that 41 had such problems. Suppose these 51 were randomly sampled from the population of all homes having Chinese dry-wall. Does the data provide strong evidence for concluding that more than 50% of all homes with Chinese drywall have electrical/environmental problems? Carry out a test of hypotheses using alpha = .01. Which of the following statements are true. "
 Group of answer choices
 
+
 work:
 
 ![chap_8_problem_2.png](images/chap_8_problem_2.png)
@@ -86,29 +87,36 @@ work:
 6. "Have you ever been frustrated because you could not get a container of some sort to release the last bit of its contents? The article ""Shake, Rattle, and Squeeze: How Much Is Left in That Container?"" (Consumer Reports, May 2009: 8) reported on an investigation of this issue for various consumer products. Suppose five 6.0 oz tubes of toothpaste of a particular brand are randomly selected and squeezed until no more toothpaste will come out. Then each tube is cut open and the amount remaining is weighed, resulting in the following data (consistent with what the cited article reported): .53, .65, .46, .50, .37. Does it appear that the true average amount left is less than 10% of the advertised net contents? Carry out a test of the appropriate hypotheses using a significance level of 0.05 and 0.01. Which of the following statements are true."
 Group of answer choices
 
-The test statistic should be a t statistic because of the amunt of data present.
+- [ ] The test statistic should be a t statistic because of the amunt of data present.
+- [ ] We fail to reject H_0 at the 0.05 significance level and reject at the 0.01 significance level.
+- [ ] "There is evidence that the true average content is less than 10% of the original 6 oz. at the the 5% significance level, but not at the 1% significance level."
+- [ ] "There is evidence that the true average content is more than 10% of the original 6 oz. at the the 5% significance level, but not at the 1% significance level."
 
-We fail to reject H_0 at the 0.05 significance level and reject at the 0.01 significance level.
 
-"There is evidence that the true average content is less than 10% of the original 6 oz. at the the 5% significance level, but not at the 1% significance level."
+work:
 
-"There is evidence that the true average content is more than 10% of the original 6 oz. at the the 5% significance level, but not at the 1% significance level."
+![chap_8_problem_6_part_1.png](images/chap_8_problem_6_part_1.png)
+![chap_8_problem_6_part_2.png](images/chap_8_problem_6_part_2.png)
+
+answer:
+- [x] The test statistic should be a t statistic because of the amunt of data present.
+- [x] "There is evidence that the true average content is less than 10% of the original 6 oz. at the the 5% significance level, but not at the 1% significance level."
+
 
 
 
 7. "One method for straightening wire before coiling it to make a spring is called ""roller straightening."" The article ""The Effect of Roller and Spinner Wire Straightening on Coiling Performance and Wire Properties"" (Springs, 1987: 27-28) reports on the tensile properties of wire. Suppose a sample of 16 wires is selected and each is tested to determine tensile strength (N/mm^2). The resulting sample mean and standard deviation are 2160 and 30, respectively. The mean tensile strength for springs made using spinner straightening is 2150 N/mm^2. What hypotheses should be tested to determine whether the mean tensile strength for the roller method exceeds 2150?"
 Group of answer choices
 
-None of these
+- [ ] None of these
+- [ ] H_0: mu = 2150 vs. H_a: mu < 2150
+- [ ] H_0: mu > 2150 vs. H_a: mu < 2150
+- [ ] H_0: mu < 2150 vs. H_a: mu > 2150
 
-H_0: mu = 2150 vs. H_a: mu < 2150
+work:
+![chap_8_problem_7.png](images/chap_8_problem_7.png)
 
-H_0: mu > 2150 vs. H_a: mu < 2150
-
-H_0: mu < 2150 vs. H_a: mu > 2150
-
-
-
+answer: None I believe?
 
 
 8.A sample of 12 radon detectors of a certain type was selected, and each was exposed to 100 pCi/L of radon. The resulting readings were as follows:
@@ -134,16 +142,18 @@ Answer:
 - [x] Fail to reject H_0. The data does not indicate that these readings differ significantly fromm 100.
 
 9. "One method for straightening wire before coiling it to make a spring is called ""roller straightening."" The article ""The Effect of Roller and Spinner Wire Straightening on Coiling Performance and Wire Properties"" (Springs, 1987: 27-28) reports on the tensile properties of wire. Suppose a sample of 16 wires is selected and each is tested to determine tensile strength (N/mm^2). The resulting sample mean and standard deviation are 2160 and 30, respectively. Assuming that the tensile strength distribution is approximately normal, what test statistic would you use to test the hypotheses of whether the mean tensile strength for the roller method exceeds 2150."
+
 Group of answer choices
 
-t=(xbar-2150)/(s/sqrt(n))
+- [ ] t=(xbar-2150)/(s/sqrt(n))
+- [ ] t=(xbar+2150)/(s/sqrt(n-1))
+- [ ] t=(xbar-2150)/(sigma^2/sqrt(n))
+- [ ] t=(xbar-2150)/(sigma^2)
 
-t=(xbar+2150)/(s/sqrt(n-1))
+![same_from_question_7](images/chap_8_problem_7.png)
 
-t=(xbar-2150)/(sigma^2/sqrt(n))
-
-t=(xbar-2150)/(sigma^2)
-
+answer: 
+- [x] t=(xbar-2150)/(s/sqrt(n))
 
 
 10. "One method for straightening wire before coiling it to make a spring is called ""roller straightening."" The article ""The Effect of Roller and Spinner Wire Straightening on Coiling Performance and Wire Properties"" (Springs, 1987: 27-28) reports on the tensile properties of wire. Suppose a sample of 16 wires is selected and each is tested to determine tensile strength (N/mm^2). The resulting sample mean and standard deviation are 2160 and 30, respectively. For a level .05 test, what conclusion would you reach?"
@@ -155,8 +165,28 @@ Group of answer choices
 - [ ] H_0 cannot be rejected. The mean tensile strength for springs made using roller straightening is significantly greater than 2150 N/nm^2.
 - [ ] H_0 should be rejected. The mean tensile strength for springs made using roller straightening is not significantly greater than 2150 N/nm^2.
 
+work:
+![chap_8_problem_10.png](images/chap_8_problem_10.png)
+
+
+look up t value in the back. for a t stat of 1.33, the alpha is like 0.10
+
+For a one-tailed test at α = 0.05, the critical t-value for 15 degrees of freedom is typically around 1.753. Since our calculated t-value of 1.33 is less than the critical value of 1.753, we do not have sufficient evidence to reject the null hypothesis at the 0.05 significance level. Therefore, based on this test, we cannot conclude that the mean tensile strength for the roller method exceeds 2150 N/mm² with statistical significance at the 0.05 level.
+answer:
+
+first one
+- [x] H_0 cannot be rejected. The mean tensile strength for springs made using roller straightening is not significantly greater than 2150 N/nm^2.
+
+
 
 11. "With domestic sources of building supplies running low several years ago, roughly 60,000 homes were built with imported Chinese drywall. According to the article ""Report Links Chinese Drywall to Home Problems"" (New York Times, Nov. 24, 2009), federal investigators identified a strong association between chemicals in the drywall and electrical problems, and there is also strong evidence of respiratory difficulties due to the emission of hydrogen sulfide gas. An extensive examination of 51 homes found that 41 had such problems. Suppose these 51 were randomly sampled from the population of all homes having Chinese dry-wall. Calculate a lower confidence bound using a confidence level of 99% for the percentage of all such homes that have electrical/environmental problems."
+
+work:
+![chap_8_problem_11.png](images/chap_8_problem_11.png)
+0.8039 is the sample p. then we use the formula for binomial problems in calculating the confidence interval. It involves the z score associated with 0.01
+
+answer: 
+0.8039 - 0.1295 = 0.6744
 
 12. "Scientists think that robots will play a crucial role in factories in the next several decades. Suppose that in an experiment to determine whether the use of robots to weave computer cables is feasible, a robot was used to assemble 500 cables. The cables were examined and there were 15 defectives. If human assemblers have a defect rate of .035 (3.5%), does this data support the hypothesis that the proportion of defectives is lower for robots than for humans? Use a .01 significance level and mark all statement that are true."
 Group of answer choices
@@ -168,6 +198,23 @@ Group of answer choices
 - [ ] Only one of the statements is true.
 
 
+
+
+work:
+![chap_8_problem_12.png](images/chap_8_problem_12.png)
+![chap_8_problem_12_part_2.png](images/chap_8_problem_12_part_2.png)
+
+
+why do we use the p of humans in calculating the standard error?
+
+The 3.5% defect rate is the existing standard or benchmark for the defect rate in cable assembly by humans. When we are testing whether robots can do better (i.e., have a lower defect rate), we compare the robot's performance against this known standard.
+
+Null Hypothesis Basis: In hypothesis testing, the null hypothesis represents the status quo or a statement of "no effect." In this case, it posits that robots have a defect rate that is not better than (or is greater than or equal to) the human rate of 3.5%. To test this, we assume the null hypothesis is true until evidence suggests otherwise. Therefore, we use the 3.5% rate to calculate how much variation we would expect in our sample if the true defect rate for robots was indeed the same as humans.
+
+answer:
+- [x] H_0 is not rejected. Robots have not demonstrated their superiiority.
+- [x] We should be testing H_0: p = 0.035 vs. H_a: p < 0.035.
+
 13. "It is known that roughly 2/3 of all human beings have a dominant right foot or eye. Is there also right-sided dominance in kissing behavior? The article ""Human Behavior: Adult Persistence of Head-Turning Asymmetry"" (Nature, 2003: 771) reported that in a random sample of 124 kissing couples, both people in 80 of the couples tended to lean more to the right than to the left. Does the result of the experiment suggest that the 2/3 figure is implausible for kissing behavior? State and test the appropriate hypotheses and mark all statements that are true."
 Group of answer choices
 
@@ -177,6 +224,11 @@ Group of answer choices
 - [ ] There is no statistically significant eveidence to suggest that the p = 2/3 figure is implausible for right-leaning kissing behavior.
 - [ ] There is statistically significant eveidence to suggest that the p = 2/3 figure is implausible for right-leaning kissing behavior.
 
+work:
+![chap_8_problem_13.png](images/chap_8_problem_13.png)
+
+answer:
+
 
 14. "Pairs of P-values and significance levels, alpha, are given. For each pair, state whether the observed P-value would lead to rejection of H_0 at the given significance level. P-value = .084, alpha = .05"
 Group of answer choices
@@ -185,7 +237,55 @@ Group of answer choices
 - [ ] Reject
 - [ ] Not Enough Information
 
+work:
+
+The principle of comparing the p-value to the significance level (\(\alpha\)) is the same in both one-tailed and two-tailed tests. Here's how it works and some tips to consider:
+
+1. **Basic Comparison:**
+   - Regardless of whether it's a one-tailed or two-tailed test, if the p-value is less than \(\alpha\), you reject the null hypothesis. If it's greater, you fail to reject it.
+
+2. **One-tailed vs. Two-tailed Tests:**
+   - In a one-tailed test, all of the alpha level is on one side of the distribution, meaning you are testing for the possibility of the relationship in one direction only.
+   - In a two-tailed test, the alpha level is split between both tails of the distribution, testing for the possibility of the relationship in either direction. This means that you have to consider the possibility of an effect in both directions, which is why you divide \(\alpha\) by 2 for each tail.
+
+3. **Trick for Two-tailed Tests:**
+   - For two-tailed tests, you are effectively looking for extreme values in either direction, so you might think of it as doubling your chances of finding a significant result. However, because you are testing for extremes in both directions, you actually need a more extreme test statistic to reject \(H_0\).
+   - A common "trick" or rule of thumb is to halve the alpha level for each tail in a two-tailed test. So, if \(\alpha = 0.05\), you'd look for p-values less than 0.025 in each tail of the distribution.
+
+4. **P-value Interpretation:**
+   - The p-value tells you the probability of observing your data, or something more extreme, assuming the null hypothesis is true. A small p-value (below \(\alpha\)) indicates that the observed data is improbable under the null hypothesis and thus provides evidence against \(H_0\).
+
+5. **Practical Tip:**
+   - Always clarify whether your test is one-tailed or two-tailed before conducting it, as it affects how you interpret your p-value in relation to your \(\alpha\). For a two-tailed test, the p-value must be compared to \(\alpha/2\) for each tail, but the reported p-value from statistical software is usually for the two-tailed test, so you can compare it directly to your original \(\alpha\) level.
+
+In summary, the "trick" is in understanding the directionality of your test (one-tailed vs. two-tailed) and adjusting your interpretation of the p-value accordingly. The process of comparing the p-value to \(\alpha\) remains fundamentally the same.
+
+answer:
+no do not reject
+
 15. "Pairs of P-values and significance levels, alpha, are given. For each pair, state whether the observed P-value would lead to rejection of H_0 at the given significance level. P-value = .003, alpha = .001 "
+
+The principle of comparing the p-value to the significance level (\(\alpha\)) is the same in both one-tailed and two-tailed tests. Here's how it works and some tips to consider:
+
+1. **Basic Comparison:**
+   - Regardless of whether it's a one-tailed or two-tailed test, if the p-value is less than \(\alpha\), you reject the null hypothesis. If it's greater, you fail to reject it.
+
+2. **One-tailed vs. Two-tailed Tests:**
+   - In a one-tailed test, all of the alpha level is on one side of the distribution, meaning you are testing for the possibility of the relationship in one direction only.
+   - In a two-tailed test, the alpha level is split between both tails of the distribution, testing for the possibility of the relationship in either direction. This means that you have to consider the possibility of an effect in both directions, which is why you divide \(\alpha\) by 2 for each tail.
+
+3. **Trick for Two-tailed Tests:**
+   - For two-tailed tests, you are effectively looking for extreme values in either direction, so you might think of it as doubling your chances of finding a significant result. However, because you are testing for extremes in both directions, you actually need a more extreme test statistic to reject \(H_0\).
+   - A common "trick" or rule of thumb is to halve the alpha level for each tail in a two-tailed test. So, if \(\alpha = 0.05\), you'd look for p-values less than 0.025 in each tail of the distribution.
+
+4. **P-value Interpretation:**
+   - The p-value tells you the probability of observing your data, or something more extreme, assuming the null hypothesis is true. A small p-value (below \(\alpha\)) indicates that the observed data is improbable under the null hypothesis and thus provides evidence against \(H_0\).
+
+5. **Practical Tip:**
+   - Always clarify whether your test is one-tailed or two-tailed before conducting it, as it affects how you interpret your p-value in relation to your \(\alpha\). For a two-tailed test, the p-value must be compared to \(\alpha/2\) for each tail, but the reported p-value from statistical software is usually for the two-tailed test, so you can compare it directly to your original \(\alpha\) level.
+
+In summary, the "trick" is in understanding the directionality of your test (one-tailed vs. two-tailed) and adjusting your interpretation of the p-value accordingly. The process of comparing the p-value to \(\alpha\) remains fundamentally the same.
+
 Group of answer choices
 
 - [ ] Reject
@@ -202,9 +302,36 @@ Group of answer choices
 
 17. Newly purchased tires of a certain type are supposed to be filled to a pressure of 30lb/in^2. Let mu denote the true average pressure. Find the P-value associated with z = 2.10 for testing H_0: mu = 30 versus H_a: mu is not = 30.
 
+work:
+why do we double it at the end?
+
+Yes, Jeff, that's exactly right. The p-value in a two-tailed test represents the probability of observing a test statistic as extreme as, or more extreme than, the one calculated from your sample data, considering both tails of the distribution. It's the probability of finding values outside the range defined by that z-score on both sides of the normal distribution.
+
+Here’s how it works:
+
+For positive z-scores: You find the probability of getting a value greater than that z-score (right tail), but because it's a two-tailed test, you also consider the probability of getting a value as extreme in the opposite direction (left tail).
+
+For negative z-scores: It's the same concept but starting from the left tail.
+
+This total probability (sum of both tails) helps to assess whether the observed data are significantly different from the hypothesized parameter, considering both possibilities of being greater than or less than the hypothesized value. Therefore, the p-value in this context is indeed the probability of being outside the range defined by the observed z-score on both sides of the distribution.
+
+![chap_8_problem_19.png](images/chap_8_problem_19.png)
+
+
+answer:
+2 × 0.0179 = 0.0358
 
 
 18. Newly purchased tires of a certain type are supposed to be filled to a pressure of 30lb/in^2. Let mu denote the true average pressure. Find the P-value associated with z = -1.75 for testing H_0: mu = 30 versus H_a: mu is not = 30.
+
+
+work:
+![chap_8_problem_18.png](images/chap_8_problem_18.png)
+
+answer:
+
+0.0802
+
 
 19. "Reconsider the paint-drying situation of Example 8.2 (on page 305), in which drying time for a test specimen is normally distributed with sigma = 9. The hypotheses H_0: mu = 75 versus H_a: mu < 75 are to be tested using a random sample of n = 25 observations. If a level .01 test is used with n = 100, what is the probability of a type I error when mu = 76?"
 given that alpha = 0.01
