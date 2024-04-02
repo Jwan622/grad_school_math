@@ -1,6 +1,18 @@
 # Topics
 - two sample problems
 
+
+# Review
+
+![chap_9_review_type_2_z_score.png](images/chap_9_review_type_2_z_score.png)
+
+Why do we add the 2.58?
+
+answer:
+![chap_9_review_type_2_z_score_part_2.png](images/chap_9_review_type_2_z_score_part_2.png)
+
+
+
 # Notes
 This module is all about comparing 2 samples, from 2 different populations. 2 different distributions!
 
