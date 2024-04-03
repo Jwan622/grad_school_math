@@ -1,5 +1,8 @@
 # Topics
 - two sample problems
+- B and sample size determination
+- Power and sample size. Problem 4 is a good one to go over in this.
+- 
 
 
 # Review
@@ -76,3 +79,18 @@ Why are we using a f distribution when comparing variances? Why is this coures s
 is the fused smaller than the non-fused for the std deviation? Notice degrees of freedom for each sample is 1 less the n size for each sample. We need both to calculate the f statistic.
 
 To compute the F stat, it seems like we need to square both sample std deviations and then divide them by each other.
+
+# F-Distribution for Comparing Variances
+
+The F-distribution is used when comparing sample variances to draw conclusions about the population variances. This comes into play, for example, when you want to compare the variability of two processes or treatments.
+
+- The F-distribution is asymmetric and only defined for positive values because variances are always positive.
+- It is based on the ratio of two scaled chi-squared distributions, where each chi-squared value is divided by its degrees of freedom, resulting in a statistic that follows the F-distribution.
+
+For instance, if you have two manufacturing machines and you want to know if they produce parts with the same variability in weights, you could use an F-test to compare the variances of the weights from each machine. A significant result would suggest that one machine is producing parts that are more or less variable in weight than the other.
+
+The formula for the F-statistic is \( F = \frac{S1^2 / \sigma1^2}{S2^2 / \sigma2^2} \), where \( S1^2 \) and \( S2^2 \) are the sample variances, and \( \sigma1^2 \) and \( \sigma2^2 \) are the population variances. The hypothesis test involves comparing the calculated F-statistic to a critical value from the F-distribution, considering the degrees of freedom for each variance.
+
+In essence:
+
+- The F-distribution is used in the context of an F-test to compare two sample variances and infer whether the underlying population variances differ.
