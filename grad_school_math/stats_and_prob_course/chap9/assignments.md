@@ -77,21 +77,37 @@ answer:
 38
 
 5. Let mu_1 and mu_2 denote true average densities for two different types of brick. Assuming normality of the two density distributions, test H_0: mu_1 - mu_2 = 0 versus H_a: mu_1 - mu_2 does not = 0 using the following data: m = 6 , x_bar = 22.73, s_1 = .164, n = 5, y_bar = 21.95, and s_2 = .240. Select the statements that are true.
+
 Group of answer choices
 
 - [ ] We reject H0 and conclude there is a difference in the densities of the two bricks.
-- [ ] The p -value is 0.01.
+- [ ] The p value is 0.01.
 - [ ] We reject H0 and conclude there is not a difference in the densities of the two bricks.
 - [ ] The t statistic is equal to 6.17
 - [ ] We do not reject the null hypothesis.
+
+
+work:
+![chap_9_problem_5_part_1.png](images/chap_9_problem_5_part_1.png)
+
+T = 6.166
+df = 6
+
+The p-value corresponding to a t-statistic of 6.17 with 6 degrees of freedom is approximately 0.00083 for a two-tailed test. 
+
+answer:
+- [x] We reject H0 and conclude there is a difference in the densities of the two bricks.
+- [x] The t statistic is equal to 6.17
 
 
 
 6. An experiment to compare the tension bond strength of polymer latex modified mortar (Portland cement mortar to which polymer latex emulsions have been added during mixing) to that of unmodified mortar resulted in x_bar = 18.12 kgf/cm^2 for the modified mortar (m = 40) and y_bar = 16.87 kgf/cm^2 for the unmodified mortar (n = 32). Let mu_1 and mu_2 be the true average tension bond strengths for the modified and unmodified mortars, respectively. Assume that the bond strength distributions are both normal. Assuming that sigma_1.6 and sigma_2 = 1.4, test H_0: mu_1 - mu_2 = 0 versus H_a: mu_1 - mu_2 > 0 at level .01. Compute the probability of a type II error for the test of when mu_1 - mu_2 = 1.
 
 work:
+![chap_9_problem_6.png](images/chap_9_problem_6.png)
 
 answer:
+0.3085
 
 
 7. "The accompanying table gives summary data on cube compressive strength (N/mm^2) for concrete specimens made with a pulverized fuel-ash mix (""A Study of Twenty-Five- Year-Old Pulverized Fuel Ash Concrete Used in Foundation Structures,"" Proc. Inst. Civ. Engrs., Mar. 1985: 149-165): (see the table on page 356 exercise 12) Calculate a 99% upper CI for the difference between true average 7-day strength and true average 28-day strength."
@@ -199,3 +215,69 @@ Group of answer choices
 - [ ] We do not reject H0.
 - [ ] There does not appear to be a difference between the two populations.
 - [ ] None of these answers are true.
+
+
+17. Damage to grapes from bird predation is a serious problem for grape growers. The article 'Experimental Method to Investigate and Monitor Bird Behavior and Damage to Vineyards' (Amer. J. of Enology and Viticulture, 2004: 288-291) reported on an experiment involving a bird-feeder table, time-lapse video, and artificial foods. Information was collected for two different bird species at both the experimental location and at a natural vineyard setting. Consider the following data on time (sec) spent on a single visit to the location. (See table on pg. 363 exercise 24) Does it appear that true average time spent by blackbirds at the experimental location exceeds the true average time birds of this type spend at the natural location? Carry out a test of appropriate hypotheses. Select the statements that are true.
+Group of answer choices
+
+- [ ] We fail to reject at 5% significance level.
+- [ ] The test statistic evaluates to 1.37.
+- [ ] The true average time spent by blackbirds at the experimental location is not statistically significantly higher than at the natural location.
+- [ ] We reject H0
+- [ ] Only one of the other answers is true.
+
+
+18. As the population ages, there is increasing concern about accident-related injuries to the elderly. The article 'Age and Gender Differences in Single-Step Recovery from a Forward Fall' (J. of Gerontology, 1999: M44-M50) reported on an experiment in which the maximum lean angleÑthe furthest a subject is able to lean and still recover in one step was determined for both a sample of younger females (21-29 years) and a sample of older females (67-81 years). The following observations are consistent with summary data given in the article: (see the table on pg. 364 exercise 28) Does the data suggest that true average maximum lean angle for older females is more than 10 degrees smaller than it is for younger females? State and test the relevant hypotheses at significance level .10 by obtaining a P-value. Select the statements that are true.
+
+Group of answer choices
+
+- [ ] The P-value is approximately 0.045.
+- [ ] The test statistic evaluates to 2.37.
+- [ ] We reject H0.
+- [ ] We do not reject H0.
+- [ ] None of these answers are true.
+
+
+19. It is thought that the front cover and the nature of the first question on mail surveys influence the response rate. The article 'The Impact of Cover Design and First Questions on Response Rates for a Mail Survey of Skydivers' (Leisure Sciences, 1991: 67-76) tested this theory by experimenting with different cover designs. One cover was plain; the other used a picture of a skydiver. The researchers speculated that the return rate would be lower for the plain cover. (See the table on page 381 exercise 51) Does this data support the researchersÕ hypothesis? Test the relevant hypotheses using alpha = .10 by first calculating a P-value. Select the statements that are true.
+
+Group of answer choices
+
+- [ ] We fail to reject the null hypothesis.
+- [ ] We reject H0
+- [ ] The calculated test statistic evaluates to 0.4247.
+- [ ] The P-value evaluates to -0.1910.
+- [ ] The data does not indicate that plain cover surveys have a lower response rate.
+
+
+20. Anorexia Nervosa (AN) is a psychiatric condition leading to substantial weight loss among women who are fearful of becoming fat. The article 'Adipose Tissue Distribution After Weight Restoration and Weight Maintenance in Women with Anorexia Nervosa' (Amer. J. of Clinical Nutr., 2009: 1132-1137) used whole-body magnetic resonance imagery to determine various tissue characteristics for both an AN sample of individuals who had undergone acute weight restoration and maintained their weight for a year and a comparable (at the outset of the study) control sample. Here is summary data on intermuscular adipose tissue (IAT; kg). (See the table on pg. 363 exercise 27) Assume that both samples were selected from normal distributions. Calculate an estimate for the difference between true average AN IAT and true average control IAT, and do so in a way that conveys information about the reliability and precision of the estimation. What does your estimate suggest about true average AN IAT relative to true average control IAT? Select the statements that are true.
+
+Group of answer choices
+
+- [ ] "The CI is given by (-0.07, 0.41)"
+- [ ] It is not plausible that the difference between the two means could be zero.
+- [ ] "The CI is given by (0.03, 0.55)"
+- [ ] The CI includes zero.
+- [ ] None of these answers are true.
+
+
+21. An experiment to compare the tension bond strength of polymer latex modified mortar (Portland cement mortar to which polymer latex emulsions have been added during mixing) to that of unmodified mortar resulted in x_bar = 18.12 kgf/cm^2 for the modified mortar (m = 40) and y_bar = 16.87 kgf/cm^2 for the unmodified mortar (n = 32). Let mu_1 and mu_2 be the true average tension bond strengths for the modified and unmodified mortars, respectively. Assume that the bond strength distributions are both normal. Assuming that sigma_1.6 and sigma_2 = 1.4, test H_0: mu_1 - mu_2 = 0 versus H_a: mu_1 - mu_2 = 0 at level .01. Select the statements that are true.
+
+Group of answer choices
+
+- [ ] We reject H0.
+- [ ] We fail to reject H0.
+- [ ] The test statistic evaluates to 3.53.
+- [ ] The test statistic evaluates to 1.2.
+- [ ] H0 should be rejected at the 0.01 significance level.
+
+work:
+![chap_9_problem_21.png](images/chap_9_problem_21.png)
+
+answer:
+- [x] We reject H0.
+- [x] The test statistic evaluates to 3.53.
+- [x] H0 should be rejected at the 0.01 significance level.
+
+
+
+22. "Tensile-strength tests were carried out on two different grades of wire rod (""Fluidized Bed Patenting of Wire Rods,"" Wire J., June 1977: 56-61), resulting in the accompanying data.(see the table on page 355 exercise 8) Calculate a 95% upper limit confidence interval for mu_1 - mu_2."
