@@ -113,11 +113,13 @@ answer:
 7. "The accompanying table gives summary data on cube compressive strength (N/mm^2) for concrete specimens made with a pulverized fuel-ash mix (""A Study of Twenty-Five- Year-Old Pulverized Fuel Ash Concrete Used in Foundation Structures,"" Proc. Inst. Civ. Engrs., Mar. 1985: 149-165): (see the table on page 356 exercise 12) Calculate a 99% upper CI for the difference between true average 7-day strength and true average 28-day strength."
 
 work:
+![chap_9_problem_7.png](images/chap_9_problem_7.png)
 
 answer:
+-6.520483
 
 
-8. een Court is a juvenile diversion program designed to circumvent the formal processing of first-time juvenile offenders within the juvenile justice system. The article 'An Experimental Evaluation of Teen Courts' (J. of Experimental Criminology, 2008: 137-163) reported on a study in which offenders were randomly assigned either to Teen Court or to the traditional Department of Juvenile Services method of processing. Of the 56 TC individuals, 18 subsequently recidivated (look it up!) during the 18-month follow-up period, whereas 12 of the 51 DJS individuals did so. Does the data suggest that the true proportion of TC individuals who recidivate during the specified follow-up period differs from the proportion of DJS individuals who do so? State and test the relevant hypotheses by obtaining a P-value and then using a significance level of .10. Select the statements that are true.
+8. Teen Court is a juvenile diversion program designed to circumvent the formal processing of first-time juvenile offenders within the juvenile justice system. The article 'An Experimental Evaluation of Teen Courts' (J. of Experimental Criminology, 2008: 137-163) reported on a study in which offenders were randomly assigned either to Teen Court or to the traditional Department of Juvenile Services method of processing. Of the 56 TC individuals, 18 subsequently recidivated (look it up!) during the 18-month follow-up period, whereas 12 of the 51 DJS individuals did so. Does the data suggest that the true proportion of TC individuals who recidivate during the specified follow-up period differs from the proportion of DJS individuals who do so? State and test the relevant hypotheses by obtaining a P-value and then using a significance level of .10. Select the statements that are true.
 
 Group of answer choices
 
@@ -127,6 +129,21 @@ Group of answer choices
 - [ ] The test statistic evaluates to 1.2.
 - [ ] None of the statements are true
 
+work:
+![chap_9_problem_8_part_1.png](images/chap_9_problem_8_part_1.png)
+![chap_9_problem_8_part_2.png](images/chap_9_problem_8_part_2.png)
+
+pg 376 has  the formula in the book for proportions.
+
+we use the z table if at least 10 if mp np, mq, nq are all greater than 10.
+
+answer:
+
+None
+
+
+
+
 9. Tensile-strength tests were carried out on two different grades of wire rod ('Fluidized Bed Patenting of Wire Rods,' Wire J., June 1977: 56-61), resulting in the accompanying data.(see the table on page 355 exercise 8) Does the data provide compelling evidence for concluding that true average strength for the 1078 grade exceeds that for the 1064 grade by more than 10 kg/mm^2? Test the appropriate hypotheses using the P-value approach. Select the statements that are true.
 Group of answer choices
 
@@ -135,6 +152,18 @@ Group of answer choices
 - [ ] The test statistic evaluates to 28.57.
 - [ ] This is a lower-tailed test.
 - [ ] There is very compelling evidence that the mean tensile strength of the 1078 grade exceeds that of the 1064 by more than 10.
+
+work:
+![chap_9_problem_9.png](images/chap_9_problem_9.png)
+sample sizes are large, so maybe let's use a z test
+
+![chap_9_problem_9_part_2.png](images/chap_9_problem_9_part_2.png)
+
+answer:
+- [x] We reject H0.
+- [x] The test statistic evaluates to 28.57.
+- [x] There is very compelling evidence that the mean tensile strength of the 1078 grade exceeds that of the 1064 by more than 10.
+
 
 10. Suppose mu_1 and mu_2 are true mean stopping distances at 50 mph for cars of a certain type equipped with two different types of braking systems. Use the two-sample t test at significance level .01 to test H_0: mu_1 - mu_2 = -10 versus H_a: mu_1 - mu_2 < -10 for the following data: m = 6, x_bar = 115.7, s_1 = 5.03, n = 6, y_bar = 129.3, and s_2 = 5.38. Select the statements that are true.
 
@@ -146,6 +175,15 @@ Group of answer choices
 - [ ] The test statistic for this problem computes to 1.76.
 - [ ] None of these answers are true.
 
+work:
+![chap_9_problem_10.png](images/chap_9_problem_10.png)
+
+find the degrees of freedom using that stupid formula. and we find the t stat. then we realize the area to the left is simply P(T < -1.2) and -1.2 is the t statistic. the numerator of the equation finding the t stat is the difference of 2 means < -10 and the denominator is the sqrt of both std_deviations squared divided by their sample sizes.
+
+
+answer:
+None of these answers are true.
+
 11. Is someone who switches brands because of a financial inducement less likely to remain loyal than someone who switches without inducement? Let p_1 and p_2 denote the true proportions of switchers to a certain brand with and without inducement, respectively, who subsequently make a repeat purchase. Test H_0: p_1 - p_2 = 0 versus H_a: p_1 - p_2 < 0 using alpha = .01 and the following data: (see table on page 380 exercise 49). Select the statements that are true.
 Group of answer choices
 
@@ -154,6 +192,20 @@ Group of answer choices
 - [ ] The calculated test statistic evaluates to 2.87.
 - [ ] The calculated test statistic evaluates to 0.87.
 - [ ] The calculated test statistic evaluates to 1.87.
+
+work:
+When conducting a hypothesis test for two proportions, we pool the sample proportions under the assumption that the null hypothesis is true — that is, 
+p_1 = p_2 
+
+This pooled proportion is used to calculate the standard error of the difference between two independent proportions because under the null hypothesis, we assume that both samples are drawn from populations with the same true proportion.
+
+This pooled proportion is used in the standard error formula because it represents the best estimate of the common proportion when the null hypothesis is true.
+
+
+![chap_9_problem_11.png](images/chap_9_problem_11.png)
+
+answer:
+we reject null
 
 12. The degenerative disease osteoarthritis most frequently affects weight-bearing joints such as the knee. The article 'Evidence of Mechanical Load Redistribution at the Knee Joint in the Elderly when Ascending Stairs and Ramps' (Annals of Biomed. Engr., 2008: 467-476) presented the following summary data on stance duration (ms) for samples of both older and younger adults. (See the table on page 364 exercise 32) Assume that both stance duration distributions are normal. Carry out a test of hypotheses at significance level .05 to decide whether true average stance duration is larger among elderly individuals than among younger individuals. Select the statements that are true.
 
@@ -188,9 +240,16 @@ Group of answer choices
 
 - [ ] We reject H0.
 - [ ] We fail to reject H0.
-- [ ] The calculated test statistic evaluates to -2.2.
+- [x] The calculated test statistic evaluates to -2.2.
 - [ ] The P-value evaluates to 0.28.
 - [ ] The data supports the idea that exposure to DES reduces spatial ability.
+
+work:
+![chap_9_problem_14.png](images/chap_9_problem_14.png)
+![chap_9_problem_14_part_2.png](images/chap_9_problem_14_part_2.png)
+
+answer:
+we reject, t is -2.2
 
 15. Lactation promotes a temporary loss of bone mass to provide adequate amounts of calcium for milk production. The paper 'Bone Mass Is Recovered from Lactation to Post-weaning in Adolescent Mothers with Low Calcium Intakes' (Amer. J. of Clinical Nutr., 2004: 1322-1326) gave the following data on total body bone mineral content (TBBMC) (g) for a sample both during lactation (L) and in the post-weaning period (P). (See the table on page 373 exercise 40) Does the data suggest that true average total body bone mineral content during post-weaning exceeds that during lactation by more than 25 g? State and test the appropriate hypotheses using a significance level of .05. [Note: The appropriate normal probability plot shows some curvature but not enough to cast substantial doubt on a normality assumption.] Select the statements that are true.
 
@@ -217,6 +276,19 @@ Group of answer choices
 - [ ] None of these answers are true.
 
 
+work:
+https://brainly.com/textbook-solutions/q-22-slant-shear-test-widely-accepted-evaluating-2
+
+![chap_9_problem_16.png](images/chap_9_problem_16.png)
+
+the word "different" is used in the problem so two-tailed test is needed.
+
+2.145 is the two-tailed t test and that's at  degress of freedom 14 and  0.025 for the alpha (since it's 2 tailed and alpha is 0.05 for a 95%).
+answer:
+
+-3.159 is the t-test statistic of the difference of two means. critical t-value is 2.145 and -2.145. we can reject since -3.159 is less than 2.145.
+
+
 17. Damage to grapes from bird predation is a serious problem for grape growers. The article 'Experimental Method to Investigate and Monitor Bird Behavior and Damage to Vineyards' (Amer. J. of Enology and Viticulture, 2004: 288-291) reported on an experiment involving a bird-feeder table, time-lapse video, and artificial foods. Information was collected for two different bird species at both the experimental location and at a natural vineyard setting. Consider the following data on time (sec) spent on a single visit to the location. (See table on pg. 363 exercise 24) Does it appear that true average time spent by blackbirds at the experimental location exceeds the true average time birds of this type spend at the natural location? Carry out a test of appropriate hypotheses. Select the statements that are true.
 Group of answer choices
 
@@ -227,6 +299,14 @@ Group of answer choices
 - [ ] Only one of the other answers is true.
 
 
+work:
+![chap_9_problem_17_part_1.png](images/chap_9_problem_17_part_1.png)
+
+
+answer:
+
+fail to reject at 5%
+
 18. As the population ages, there is increasing concern about accident-related injuries to the elderly. The article 'Age and Gender Differences in Single-Step Recovery from a Forward Fall' (J. of Gerontology, 1999: M44-M50) reported on an experiment in which the maximum lean angleÑthe furthest a subject is able to lean and still recover in one step was determined for both a sample of younger females (21-29 years) and a sample of older females (67-81 years). The following observations are consistent with summary data given in the article: (see the table on pg. 364 exercise 28) Does the data suggest that true average maximum lean angle for older females is more than 10 degrees smaller than it is for younger females? State and test the relevant hypotheses at significance level .10 by obtaining a P-value. Select the statements that are true.
 
 Group of answer choices
@@ -236,6 +316,18 @@ Group of answer choices
 - [ ] We reject H0.
 - [ ] We do not reject H0.
 - [ ] None of these answers are true.
+
+work:
+![chap_9_problem_18.png](images/chap_9_problem_18.png)
+
+t = 6.691
+df = 5
+
+we are much less than 0.10
+
+answer:
+
+
 
 
 19. It is thought that the front cover and the nature of the first question on mail surveys influence the response rate. The article 'The Impact of Cover Design and First Questions on Response Rates for a Mail Survey of Skydivers' (Leisure Sciences, 1991: 67-76) tested this theory by experimenting with different cover designs. One cover was plain; the other used a picture of a skydiver. The researchers speculated that the return rate would be lower for the plain cover. (See the table on page 381 exercise 51) Does this data support the researchersÕ hypothesis? Test the relevant hypotheses using alpha = .10 by first calculating a P-value. Select the statements that are true.
@@ -249,6 +341,14 @@ Group of answer choices
 - [ ] The data does not indicate that plain cover surveys have a lower response rate.
 
 
+work:
+![chap_9_problem_19.png](images/chap_9_problem_19.png)
+
+
+answer:
+- [ ] We fail to reject the null hypothesis.
+
+
 20. Anorexia Nervosa (AN) is a psychiatric condition leading to substantial weight loss among women who are fearful of becoming fat. The article 'Adipose Tissue Distribution After Weight Restoration and Weight Maintenance in Women with Anorexia Nervosa' (Amer. J. of Clinical Nutr., 2009: 1132-1137) used whole-body magnetic resonance imagery to determine various tissue characteristics for both an AN sample of individuals who had undergone acute weight restoration and maintained their weight for a year and a comparable (at the outset of the study) control sample. Here is summary data on intermuscular adipose tissue (IAT; kg). (See the table on pg. 363 exercise 27) Assume that both samples were selected from normal distributions. Calculate an estimate for the difference between true average AN IAT and true average control IAT, and do so in a way that conveys information about the reliability and precision of the estimation. What does your estimate suggest about true average AN IAT relative to true average control IAT? Select the statements that are true.
 
 Group of answer choices
@@ -258,6 +358,19 @@ Group of answer choices
 - [ ] "The CI is given by (0.03, 0.55)"
 - [ ] The CI includes zero.
 - [ ] None of these answers are true.
+
+work:
+![chap_9_problem_20.png](images/chap_9_problem_20.png)
+
+degrees of freedom (df) using the Welch-Satterthwaite equation, which is used when estimating the degrees of freedom for a t-test for two samples that may have different variances.
+
+https://www.vaia.com/en-us/textbooks/math/probability-and-statistics-for-engineering-and-sciences-9th/inferences-based-on-two-samples/q27-e-anorexia-nervosa-an-is-a-psychiatric-condition-leading/
+
+![chap_9_problem_20_part_2.png](images/chap_9_problem_20_part_2.png)
+Therefore, the CI would be approximately (-0.004, 0.344). Since this CI includes zero, it indicates that the difference in means is not statistically significant at the 95% confidence level, as zero is a plausible value for the true difference in means. This means we cannot confidently say that the average IAT for the AN group is different from the control group.
+
+answer:
+the CI includes 0
 
 
 21. An experiment to compare the tension bond strength of polymer latex modified mortar (Portland cement mortar to which polymer latex emulsions have been added during mixing) to that of unmodified mortar resulted in x_bar = 18.12 kgf/cm^2 for the modified mortar (m = 40) and y_bar = 16.87 kgf/cm^2 for the unmodified mortar (n = 32). Let mu_1 and mu_2 be the true average tension bond strengths for the modified and unmodified mortars, respectively. Assume that the bond strength distributions are both normal. Assuming that sigma_1.6 and sigma_2 = 1.4, test H_0: mu_1 - mu_2 = 0 versus H_a: mu_1 - mu_2 = 0 at level .01. Select the statements that are true.
@@ -281,3 +394,5 @@ answer:
 
 
 22. "Tensile-strength tests were carried out on two different grades of wire rod (""Fluidized Bed Patenting of Wire Rods,"" Wire J., June 1977: 56-61), resulting in the accompanying data.(see the table on page 355 exercise 8) Calculate a 95% upper limit confidence interval for mu_1 - mu_2."
+
+![chap_9_problem_22.png](images/chap_9_problem_22.png)
