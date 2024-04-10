@@ -1,6 +1,7 @@
 # Topics
 
 - Anova Single factor analysis of variance
+- finding the F stat in an anova test (problem 4 in the homework is good). look at my own notes.
 
 # Notes
 
@@ -165,3 +166,64 @@ Determine the pairs of means that are significantly different based on whether t
 Use the W value to interpret the size of the mean differences and establish confidence intervals.
 
 
+
+
+## SST and SSTr and SSE
+![SST_and_SSTr_and_SSE.png](images/SST_and_SSTr_and_SSE.png)
+
+To summarize:
+
+SST looks at how much the data vary from the grand mean.
+SSTR looks at the variability of the group means from the grand mean (which is due to the treatment effect).
+SSE looks at the variability within each group, ignoring the treatment effect.
+
+Remember that j refes to each observation within each group i.
+
+Also notice that SST and SSTr subtract a value from the grand mean. whereas SSE subtracts a value from the mean of a specific group/sample.
+
+
+## Individual vs simultaneuos confidence intervals
+
+When you calculate a single 95% confidence interval (CI) for a parameter, there's a 95% chance that this interval contains the true parameter value.
+If you calculate two independent 95% CIs (for different parameters or from different samples), the probability that both intervals correctly contain their true parameters is 
+0.95 × 0.95 =  0.9025
+0.95 × 0.95 = 0.9025, or 90.25%.
+With three independent 95% CIs, this joint probability drops to 
+0.95^3 ≈ 0.857 or 85.7%.
+The more intervals you calculate, the lower the simultaneous confidence level becomes because the chance that all intervals correctly capture their parameters decreases.
+
+ Tukey's method accounts for this when making multiple comparisons to maintain a desired overall confidence level.
+
+## Anova model equation
+
+![anova_equation.png](images/anova_equation.png)
+
+ ANOVA uses MSTr to evaluate whether there are significant differences between treatment means. If MSTr is significantly greater than the Mean Square Error (MSE), it suggests that the variability between treatment means is more than what would be expected by random chance, indicating significant treatment effects. The ANOVA model thus helps to understand whether observed differences in data are due to the treatments applied or merely due to random variation.
+
+## Tukey HSD stat
+
+![tukey_difference_w.png](images/tukey_difference_w.png)
+
+
+## Sometimes f test and tukey are at odds
+
+Yes, the F-test in ANOVA and the Tukey's honestly significant difference (Tukey's HSD) test can sometimes lead to what appears to be conflicting results. The F-test in ANOVA determines whether there are any statistically significant differences between the means of various groups, but it does not tell you which specific groups differ.
+
+If the F-test is significant, you know at least one group is different, but you don't know how many or which ones. That’s where post hoc tests like Tukey's come in—they tell you which specific groups are different.
+
+Here's where the conflict might arise: The F-test might indicate there is a difference somewhere, but then Tukey’s HSD might not find any pairwise differences that are statistically significant. This situation could happen due to a few reasons:
+
+1. **Sample Size**: Tukey's test adjusts for multiple comparisons and might not detect small differences if the sample size is not large enough.
+   
+2. **Distribution of Differences**: The overall ANOVA might be significant if there is one very large difference and several small or non-significant differences. Tukey’s test, however, might not find the smaller differences significant.
+   
+3. **Variability**: If there is high variability within groups, it might be harder for the Tukey's test to detect differences, even if the overall ANOVA is significant.
+   
+4. **Power**: The F-test might have enough power to detect an overall effect, but Tukey's HSD, which is a more conservative test, might not have enough power to detect specific differences, especially if they are subtle.
+
+In summary, the F-test in ANOVA is a global test that tells you if there’s at least one significant difference, while Tukey’s HSD is a multiple comparison test that tells you where those differences are. They're answering slightly different questions, which is why their results can sometimes seem at odds.
+
+
+## GOod problems to review
+
+Problem 4 (my notes are good) about anova and the process of finding hte F statistic
