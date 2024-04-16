@@ -3,12 +3,18 @@
 ## Terms
 - level vs factor. Each factor has many levels.
 - A factor is a treatment
+- multi level anova
 
 So the factors, or treatments, can now be several. Still using anova.
 
 ## REview
 
 Using Tukey's procedure, they've calculated "w" which is the minimum difference required for two means to be considered significantly different. The calculation uses the Q statistic from the studentized range distribution and the mean square of the error (MSE) from the ANOVA table. Then, pairwise comparisons are made between all brands, and the differences are compared against "w" to see if they are significant.
+
+
+Also review of SST and SSA and Xij:
+
+![chap_11_sst_ssa_explanation.png](images/chap_11_sst_ssa_explanation.png)
 
 # Two treatments to start
 
@@ -281,4 +287,3 @@ By confounding the ABC interaction with blocks, the experimenter accepts that th
 The experimental runs are divided into two blocks in such a way that each block contains a set of treatments where ABC interaction effect is constant across all treatments within a block.
 
 To enable the experiment to be more manageable by dealing with fewer experimental units at a time.
-

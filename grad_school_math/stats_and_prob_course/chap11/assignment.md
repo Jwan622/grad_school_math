@@ -1,41 +1,149 @@
 1. The data in the table on page 440 exercise 18 resulted from an experiment to investigate whether yield from a certain chemical process depended either on the formulation of a particular input or on mixer speed. A statistical computer package gave SS(form) = 2253.44, SS(Speed) = 230.81, SS(Form*Speed) = 18.58, and SSE = 71.87. Does yield appear to depend on either formulation or speed?
+
 Group of answer choices
 
-Both formulation and speed appear to have a highly statistically significant effect on yield.
+- [ ] Both formulation and speed appear to have a highly statistically significant effect on yield.
+- [ ] Only formulation and not speed appear to have a highly statistically significant effect on yield.
+- [ ] Only speed and not formulation appear to have a highly statistically significant effect on yield.
+- [ ] Neither formulation nor speed appear to have a highly statistically significant effect on yield.
 
-Only formulation and not speed appear to have a highly statistically significant effect on yield.
 
-Only speed and not formulation appear to have a highly statistically significant effect on yield.
+work:
+![chap_11_problem_1.png](images/chap_11_problem_1.png)
 
-Neither formulation nor speed appear to have a highly statistically significant effect on yield.
+![chap_11_problem_1_part_2.png](images/chap_11_problem_1_part_2.png)
+
+use a F calculator here: https://stattrek.com/online-calculator/f-distribution
+
+the F stat for Factor A is 376.2 which is huge. The cutoff for F is F(0.05, 1, 12)... the 1 comes from the fact there are 2 formulations so the df = 1 and 12 is the df for the error term which is I*J*(K-1) = 3*2*2 = 12
+
+So we reject the null for A and it has an effect on yield.
+
+Speed F stat is at 19.27 is alaso greater than the F cutoff of F(0.05, 2, 12) (2 degrees of freedom for B) = 3.89 so we reject B too the null.
+
+The P value of AB (the interaction) is 0.25 which is above the 0.05 cutof so we don't reject the null. The F value was too low so no interaction between A and B
+
+answer:
+
+Both formulation and speed appear to be statistically significant.
 
 
 
 
 2. A study was carried out to compare the writing lifetimes of four premium brands of pens. It was thought that the writing surface might affect lifetime, so three different surfaces were randomly selected. A writing machine was used to ensure that conditions were otherwise homogeneous (e.g., constant pressure and a fixed angle). The table on page 441 exercise 22 shows the two lifetimes (min) obtained for each brand–surface combination. Carry out an appropriate analysis, and select all statements that are true.
-Group of answer choices
 
-Interaction between brand and writing surface has no significant effect on the lifetime of the pen.
 
-Since neither f_A nor f_B is greater than its respective critical value, we can conclude that neither the surface nor the brand of pen has a significant effect on the writing lifetime.
 
-The MSE is 684.67
+- [ ] Interaction between brand and writing surface has no significant effect on the lifetime of the pen.
+- [ ] Since neither f_A nor f_B is greater than its respective critical value, we can conclude that neither the surface nor the brand of pen has a significant effect on the writing lifetime.
+- [ ] The MSE is 684.67
+- [ ] The MSE is 1350.04
 
-The MSE is 1350.04
+
+work:
+
+```python3
+import pandas as pd
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+
+# Your data
+data = {
+    'Brand': ['Brand1', 'Brand1', 'Brand2', 'Brand2', 'Brand3', 'Brand3', 'Brand4', 'Brand4'],
+    'Surface1': [709, 659, 668, 685, 659, 685, 698, 650],
+    'Surface2': [713, 726, 722, 740, 666, 684, 704, 666],
+    'Surface3': [660, 645, 692, 720, 678, 750, 686, 733]
+}
+
+# Convert the data to a pandas DataFrame
+df = pd.DataFrame(data)
+
+# Melt the DataFrame so it's in the right format for ANOVA
+df_melted = df.melt(id_vars=['Brand'], var_name='Surface', value_name='Lifetime')
+
+# Perform two-way ANOVA
+model = ols('Lifetime ~ C(Brand) + C(Surface) + C(Brand):C(Surface)', data=df_melted).fit() # lifeetime (the value) approx equals these 3 effects
+anova_results = sm.stats.anova_lm(model, typ=2)
+
+print(anova_results)
+```
+
+
+You'll see that the p values are pretty high and the MSE si 684.67. Run it in a python3 interpreter and download the packages.
+
+
+answer:
+- [x] Interaction between brand and writing surface has no significant effect on the lifetime of the pen.
+- [x] Since neither f_A nor f_B is greater than its respective critical value, we can conclude that neither the surface nor the brand of pen has a significant effect on the writing lifetime.
+- [x] The MSE is 684.67
+
 
 
 3. In a study of processes used to remove impurities from cellulose goods ("Optimization of Rope-Range Bleaching of Cellulosic Fabrics," Textile Research J., 1976: 493-496), the data on page 462 problem #40 resulted from a 2^4 experiment involving the desizing process. The four factors were enzyme concentration (A), pH (B), temperature (C), and time (D). Which main effect(s) appear to be significant?
 Group of answer choices
 
-A
+- [ ] A
+- [ ] B
+- [ ] C
+- [ ] D
+- [ ] None of the main effects are significant
 
-B
+work:
 
-C
+the 2^4 looks at all factors individually and in conjunction to deteremine effects.
 
-D
+For part (a), Yates' algorithm is a method for manually calculating the sums of squares in a factorial design ANOVA. It simplifies the process of finding sums of squares without having to construct the entire ANOVA table. It involves arranging the treatment totals in a specific order, then repeatedly halving and differencing the totals to find the main effects and interaction effects. Unfortunately, implementing Yates’ algorithm is beyond the scope of what we can directly execute in this environment due to its procedural nature and our execution constraints.
 
-None of the main effects are significant
+just do it in code python3:
+
+```python3
+# The dataset is similar to the one we previously used, but now includes two replicates.
+# The provided data also corresponds to a 2^4 factorial design.
+
+import pandas as pd
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+
+# Creating the dataset
+data_set = {
+    'Enzyme': [0.5, 0.75, 0.5, 0.75, 0.5, 0.75, 0.5, 0.75, 0.5, 0.75, 0.5, 0.75, 0.5, 0.75, 0.5, 0.75],
+    'pH': [6.0, 6.0, 7.0, 7.0, 6.0, 6.0, 7.0, 7.0, 6.0, 6.0, 7.0, 7.0, 6.0, 6.0, 7.0, 7.0],
+    'Temperature': [60.0, 60.0, 60.0, 60.0, 70.0, 70.0, 70.0, 70.0, 60.0, 60.0, 60.0, 60.0, 70.0, 70.0, 70.0, 70.0],
+    'Time': [6, 6, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 8, 8, 8, 8],
+    'Replicate1': [9.72, 9.80, 10.13, 11.80, 12.70, 11.96, 11.38, 11.80, 13.15, 10.60, 10.37, 11.30, 13.05, 11.15, 12.70, 13.20],
+    'Replicate2': [13.50, 14.04, 11.27, 11.30, 11.37, 12.05, 9.92, 11.10, 13.00, 12.37, 12.00, 11.64, 14.55, 15.00, 14.10, 16.12]
+}
+
+# Create a DataFrame
+df_yates = pd.DataFrame(data_set)
+
+# We need to "melt" the repeated measures from wide form to long form
+df_melted_yates = pd.melt(df_yates, id_vars=['Enzyme', 'pH', 'Temperature', 'Time'], var_name='Replicate', value_name='Starch')
+
+# Convert all factors to categorical
+for factor in ['Enzyme', 'pH', 'Temperature', 'Time', 'Replicate']:
+    df_melted_yates[factor] = df_melted_yates[factor].astype('category')
+
+# Run the ANOVA
+model_yates = ols('Starch ~ Enzyme * pH * Temperature * Time', data=df_melted_yates).fit()
+anova_results_yates = sm.stats.anova_lm(model_yates, typ=2)
+
+print(anova_results_yates)
+```
+
+The main effects (Enzyme, pH, Temperature, Time) and their interaction effects are listed, with their respective sum of squares (sum_sq), degrees of freedom (df), F-statistics (F), and p-values (PR(>F)).
+
+The only factor that shows a statistically significant effect is Time, with a p-value of 0.027998, which suggests that the length of the desizing process significantly affects the percentage of starch by weight.
+
+The interaction between Temperature and Time has a p-value of 0.101346, which is close to the conventional significance level of 0.05 and may suggest a borderline significant interaction effect.
+
+answer:
+just D
+
+answer:
+
+
+
 
 
 4. In an experiment to assess the effects of curing time (factor A) and type of mix (factor B) on the compressive strength of hardened cement cubes, three different curing times were used in combination with four different mixes, with three observations obtained for each of the 12 curing time–mix combinations. The resulting sums of squares were computed to be SSA = 30,763.0, SSB = 34,185.6, SSE = 97,436.8, and SST = 205,966.6. Test H0_B: beta_1 = beta_2 = beta_3 = beta_4 = 0 versus Ha_B: at least one beta_j not equal 0 using a level .05 test. Select all statements that are true.
@@ -106,6 +214,12 @@ None of the statements are true.
 
 10. Four different coatings are being considered for corrosion protection of metal pipe. The pipe will be buried in three different types of soil. To investigate whether the amount of corrosion depends either on the coating or on the type of soil, 12 pieces of pipe are selected. Each piece is coated with one of the four coatings and buried in one of the three types of soil for a fixed time, after which the amount of corrosion (depth of maximum pits, in .0001 in.) is determined. The data appears in the table on page 431 exercise #2. Compute mu_hat to 2 decimal places.
 
+work: mu_hat is grand mean
+![problem_20_part_1.png](images/problem_20_part_1.png)
+
+answer:
+50.25
+
 
 11. In an experiment to assess the effects of curing time (factor A) and type of mix (factor B) on the compressive strength of hardened cement cubes, three different curing times were used in combination with four different mixes, with three observations obtained for each of the 12 curing time–mix combinations. The resulting sums of squares were computed to be SSA = 30,763.0, SSB = 34,185.6, SSE = 97,436.8, and SST = 205,966.6. Test at level .05 the null hypothesis H0_A: alpha_1 = alpha_2 = alpha_3 = 0 (factor A main effects are absent) against Ha_A: at least one alpha_i is not equal 0. Select all true statements.
 Group of answer choices
@@ -122,16 +236,27 @@ The test statistic is 3.40
 12. Four different coatings are being considered for corrosion protection of metal pipe. The pipe will be buried in three different types of soil. To investigate whether the amount of corrosion depends either on the coating or on the type of soil, 12 pieces of pipe are selected. Each piece is coated with one of the four coatings and buried in one of the three types of soil for a fixed time, after which the amount of corrosion (depth of maximum pits, in .0001 in.) is determined. The data appears in the table on page 431 exercise #2. Assuming the validity of the additive model, carry out the ANOVA analysis using an ANOVA table to see whether the amount of corrosion depends on either the type of coating used or the type of soil. Use alpha = .05 and select all statements that are true.
 Group of answer choices
 
-Since both test statistics are greater than the appropriate critical value, neither H0A nor H0B is rejected.
+- [ ] Since both test statistics are greater than the appropriate critical value, neither H0A nor H0B is rejected.
+- [ ] Since neither test statistic is greater than the appropriate critical value, neither H0A nor H0B is rejected.
+- [ ] SSA - SSB = -7.92
+- [ ] MSE = 20.53
+- [ ] SST = SSA + SSB
 
-Since neither test statistic is greater than the appropriate critical value, neither H0A nor H0B is rejected.
+work:
+link: https://www.vaia.com/en-us/textbooks/math/probability-and-statistics-for-engineering-and-sciences-9th/multifactor-analysis-of-variance/q2e-four-different-coatings-are-being-considered-for-corrosi/
 
-SSA - SSB = -7.92
 
-MSE = 20.53
+![problem_12.png](images/problem_12.png)
+![problem_12_part_2.png](images/problem_12_part_2.png)
+![problem_12_part_3.png](images/problem_12_part_3.png)
 
-SST = SSA + SSB
+finally the values for f and p:
+![problem_12_part_4.png](images/problem_12_part_4.png)
 
+answer:
+- [ ] Since neither test statistic is greater than the appropriate critical value, neither H0A nor H0B is rejected.
+- [ ] SSA - SSB = -7.92
+- [ ] MSE = 20.53
 
 
 13. The data on page 462 problem #42 on power consumption in electric-furnace heats (kW consumed per ton of melted product) resulted from a 24 factorial experiment with three replicates (“Studies on a 10-cwt Arc Furnace,” J. of the Iron and Steel Institute, 1956: 22). The factors were nature of roof (A, low/high), power setting (B, low/high), scrap used (C, tube/plate), and charge (D, 700 lb/1000 lb). Construct the ANOVA table, and test all hypotheses of interest using alpha = .01. Which main effects are significant?
@@ -165,16 +290,41 @@ All the statements are true.
 15. The data in the table on page 440 exercise 18 resulted from an experiment to investigate whether yield from a certain chemical process depended either on the formulation of a particular input or on mixer speed. A statistical computer package gave SS(form) = 2253.44, SS(Speed) = 230.81, SS(Form*Speed) = 18.58, and SSE = 71.87. Does there appear to be interaction between the factors?
 Group of answer choices
 
-There appears to be no interaction between the two factors.
+- [ ] There appears to be no interaction between the two factors.
+- [ ] There appears to be interaction between the two factors.
+- [ ] There is not enough information to decide.
 
-There appears to be interaction between the two factors.
 
-There is not enough information to decide.
+work:
+![chap_11_problem_1.png](images/chap_11_problem_1.png)
+
+![chap_11_problem_1_part_2.png](images/chap_11_problem_1_part_2.png)
+
+use a F calculator here: https://stattrek.com/online-calculator/f-distribution
+
+the F stat for Factor A is 376.2 which is huge. The cutoff for F is F(0.05, 1, 12)... the 1 comes from the fact there are 2 formulations so the df = 1 and 12 is the df for the error term which is I*J*(K-1) = 3*2*2 = 12
+
+So we reject the null for A and it has an effect on yield.
+
+Speed F stat is at 19.27 is alaso greater than the F cutoff of F(0.05, 2, 12) (2 degrees of freedom for B) = 3.89 so we reject B too the null.
+
+Answer: 
+- The P value of AB (the interaction) is 0.25 which is above the 0.05 cutof so we don't reject the null. The F value was too low so no interaction between A and B
  
 
 16.  The data in the table on page 440 exercise 18 resulted from an experiment to investigate whether yield from a certain chemical process depended either on the formulation of a particular input or on mixer speed. A statistical computer package gave SS(form) = 2253.44, SS(Speed) = 230.81, SS(Form*Speed) = 18.58, and SSE = 71.87. Calculate beta_3 - beta_ 1 + alpha_1 to 2 decimal places using the estimates of the main effects.
-9.28
- 
+
+work:
+so alpha_1 = 187.03333 by adding up all the values in the top half and dividing by 9.
+
+grand mean = 175.844
+
+alpha_1 = 187.0333 - 175.844 = 11.19
+beta_1 = 177.83333 - 175.844 = 1.99
+beta_3 = 178.8833 - 175.844 = 3.0393
+
+answer:
+3.0393 - 1.99 + 11.19 = 12.24
 
 17. In a study of processes used to remove impurities from cellulose goods ("Optimization of Rope-Range Bleaching of Cellulosic Fabrics," Textile Research J., 1976: 493-496), the data on page 462 problem #40 resulted from a 2^4 experiment involving the desizing process. The four factors were enzyme concentration (A), pH (B), temperature (C), and time (D). How many interaction effect are deemed significant at the 0.05 level?
 Group of answer choices
@@ -211,3 +361,10 @@ Factors AC interaction effect is significant at level .05.
  
 
 20. Four different coatings are being considered for corrosion protection of metal pipe. The pipe will be buried in three different types of soil. To investigate whether the amount of corrosion depends either on the coating or on the type of soil, 12 pieces of pipe are selected. Each piece is coated with one of the four coatings and buried in one of the three types of soil for a fixed time, after which the amount of corrosion (depth of maximum pits, in .0001 in.) is determined. The data appears in the table on page 431 exercise #2. Compute {alpha_hat}_1 - {alpha_hat}_4 to 2 decimal places.
+
+work:
+null is that alpha and beta = 0
+
+https://www.vaia.com/en-us/textbooks/math/probability-and-statistics-for-engineering-and-sciences-9th/multifactor-analysis-of-variance/q2e-four-different-coatings-are-being-considered-for-corrosi/
+
+![problem_20_part_1.png](images/problem_20_part_1.png)
