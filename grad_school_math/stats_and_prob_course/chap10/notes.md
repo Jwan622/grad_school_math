@@ -52,7 +52,7 @@ The MSE is calculated by dividing the Sum of Squares Error (SSE) by its associat
 
 
 
-# The f test
+# The F test
 
 divide MST/MSE
  
@@ -63,6 +63,9 @@ does one of these variances explain the variance of the whole? There's a varianc
 Does one the treatments explain the overall variance of the group
 
 Notice the alternative is that MST > MSE. The question is the variance in the treatments is > than the variance of the dataset. Once is different than the others.
+
+ANOVA utilizes the F statistic to determine whether there are any significant differences between the means of various groups. In ANOVA, the F statistic is crucial for testing the null hypothesis that all group means are equal. If the F statistic is significantly high, it suggests that at least one of the means is different, leading to the rejection of the null hypothesis.
+
 
 
 ## How to use Anova Table
@@ -149,10 +152,16 @@ Q is the critical value here. This is called the T method, there's another proba
 
 ![Q_statistic.png](images/Q_statistic.png)
 
+![chap_10_conf_interval.png](images/chap_10_conf_interval.png)
+
+conf interval is above. If the interval does not include 0, then the means are never the same.
+
 ## Using the T Method, Q, and W Values:
 In the context of Tukey's test:
 
-The Q statistic is calculated from the data and compared to a critical value from the studentized range distribution, which is dependent on the significance level (α), the number of groups (m), and the error degrees of freedom (ν).
+In the context of Tukey's test, the "Q" refers to the studentized range statistic, which is part of Tukey's Honestly Significant Difference (HSD) test. This test is commonly used following an ANOVA when the analysis has determined that there are statistically significant differences between the means of groups. Tukey's test is used to perform multiple pairwise comparisons between group means to specifically identify which means differ from each other. the Q statistic in the context of Tukey’s HSD test is about comparing means 
+
+The Q statistic is calculated from the data and compared to a critical value from the studentized range distribution, which is dependent on the significance level (α), the number of groups (m), and the error degrees of freedom (ν). Really the m and v are degrees of freedom. 
 
 The critical value from the studentized range distribution is often represented as Q_α,m,ν. If the calculated Q statistic is greater than the critical value Q_α,m,ν , then the difference between those two means is considered statistically significant.
 
@@ -199,6 +208,15 @@ The more intervals you calculate, the lower the simultaneous confidence level be
 ![anova_equation.png](images/anova_equation.png)
 
  ANOVA uses MSTr to evaluate whether there are significant differences between treatment means. If MSTr is significantly greater than the Mean Square Error (MSE), it suggests that the variability between treatment means is more than what would be expected by random chance, indicating significant treatment effects. The ANOVA model thus helps to understand whether observed differences in data are due to the treatments applied or merely due to random variation.
+
+
+## Random effects model
+
+`Xij = u + Ai + Eij`
+
+E[Ai] = E[Eij] == 0
+Variance[Eij] = variance^2
+Variance[Ai] = variance^2A
 
 ## Tukey HSD stat
 
