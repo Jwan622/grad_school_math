@@ -192,28 +192,141 @@ answer:
 (b) Explain why a randomized block experiment with only 5 houses was used rather than a one-way ANOVA experiment involving  a total of 15 different houses with each assessor asked to assess 5 different houses(a different group of 5 for each assessor). Blocking was introduced to reduce variance.Variability due to house effect could have made us believe that there are significant differences in assessors.
 
 6. The following summary quantities were computed from an experiment involving four levels of nitrogen (A), two times of planting (B), and two levels of potassium (C) ("Use and Misuse of Multiple Comparison Procedures," Agronomy J., 1977: 205–208). Only one observation (N content, in percentage, of corn grain) was made for each of the 16 combinations of levels. SSA = .22625, SSAB = .004325, SSBC = .000625, SSC = .0036, SSB = .000025, SSAC = .00065, SST = .2384. Assume that there are no three-way interaction effects, so that MSABC is a valid estimate of variance, and test at level .05 for interaction and main effects. Select all statements that are true.
+
 Group of answer choices
+- [ ] The only statistically significant effect at the level .05 is the factor A main effect
+- [ ] Factor B main effect shows a statistically significant effect at the level .05
+- [ ] Interaction effects AB and AC are statistically significant at any level
+- [ ] None of these statements are true
 
-The only statistically significant effect at the level .05 is the factor A main effect
+work:
+SST = SSA + SSB + SSAB + SSE is the identify we will use to get SSE.
 
-Factor B main effect shows a statistically significant effect at the level .05
+![problem_6_part_1.png](images/problem_6_part_1.png)
 
-Interaction effects AB and AC are statistically significant at any level
+![problem_6_part_2.png](images/problem_6_part_2.png)
 
-None of these statements are true
+to determine which statements are true regarding the significance of interaction and main effects, we need to compute the Mean Squares (MS) for each effect and compare them with the Mean Square of the ABC interaction, which is considered an estimate of the error variance since there's an assumption that there are no three-way interactions.
+
+The Mean Square (MS) for each effect is calculated by dividing the Sum of Squares (SS) by the degrees of freedom (df) associated with that effect. For main effects:
+
+A: 3 degrees of freedom (since there are 4 levels, df = 4 - 1)
+B: 1 degree of freedom (since there are 2 levels, df = 2 - 1)
+C: 1 degree of freedom (since there are 2 levels, df = 2 - 1)
+For interaction effects:
+
+AB: df = df(A) * df(B) = 3 * 1 = 3
+AC: df = df(A) * df(C) = 3 * 1 = 3
+BC: df = df(B) * df(C) = 1 * 1 = 1
+ABC: Since we assume there are no three-way interactions, the degrees of freedom for ABC would be df(A) * df(B) * df(C) = 3 * 1 * 1 = 3, and this will serve as an estimate of the error variance.
+Given the SST (Total Sum of Squares) is .2384, we can calculate the MSE (Mean Square for Error) using the MS for ABC:
+
+MSABC = SSABC / df(ABC)
+Since we are given SSABC = .000625 and df(ABC) = 3, we can calculate MSABC.
+
+Afterward, we would compare the MS for each main effect and interaction effect against MSABC to test for significance. If MS for an effect is greater than MSABC, it may be considered statistically significant.
+
+![problem_6_part_3.png](images/problem_6_part_3.png)
+
+![problem_6_part_4.png](images/problem_6_part_4.png)
+
+key parts of this problem are:
+-dfError is 3 and we find this by doing dfTotal - dfA - dfB - dfC - dfAB - dfBC - dfAC = 3
+
+- MSe is the denominator for every F value. For ex: F_A = MS_A/MS_E = 0.0751417/0.000975 = 77.35
 
 
+
+
+answer:
 
 7. The data on page 462 problem #42 on power consumption in electric-furnace heats (kW consumed per ton of melted product) resulted from a 24 factorial experiment with three replicates (“Studies on a 10-cwt Arc Furnace,” J. of the Iron and Steel Institute, 1956: 22). The factors were nature of roof (A, low/high), power setting (B, low/high), scrap used (C, tube/plate), and charge (D, 700 lb/1000 lb). Construct the ANOVA table, and test all hypotheses of interest using alpha = .01. How many interaction effects are significant?
+
 Group of answer choices
 
-3
+- [ ] 3
+- [ ] 4
+- [ ] 2
+- [ ] None of the interaction effects are significant
 
-4
+work:
 
-2
+basically, find the MSE, find the SS, and then find the F. Here's the data: USe anova or yates.
 
-None of the interaction effects are significant
+data = {
+    "(1)": [866, 862, 800],
+    "a": [946, 800, 840],
+    "b": [774, 834, 746],
+    "ab": [709, 789, 646],
+    "c": [1017, 990, 954],
+    "ac": [1028, 906, 977],
+    "bc": [817, 783, 771],
+    "abc": [829, 806, 691],
+    "d": [988, 808, 650],
+    "ad": [966, 976, 876],
+    "bd": [702, 658, 650],
+    "abd": [784, 700, 596],
+    "cd": [922, 808, 868],
+    "acd": [1056, 870, 908],
+    "bcd": [798, 726, 700],
+    "abcd": [752, 714, 714]
+}
+
+
+
+```python3
+data = {
+    "(1)": [866, 862, 800],
+    "a": [946, 800, 840],
+    "b": [774, 834, 746],
+    "ab": [709, 789, 646],
+    "c": [1017, 990, 954],
+    "ac": [1028, 906, 977],
+    "bc": [817, 783, 771],
+    "abc": [829, 806, 691],
+    "d": [988, 808, 650],
+    "ad": [966, 976, 876],
+    "bd": [702, 658, 650],
+    "abd": [784, 700, 596],
+    "cd": [922, 808, 868],
+    "acd": [1056, 870, 908],
+    "bcd": [798, 726, 700],
+    "abcd": [752, 714, 714]
+}
+# Step 1: Calculate MSE
+total_squares = 0
+total_n = 0
+
+for key, values in data.items():
+    group_mean = np.mean(values)
+    group_squares = sum((x - group_mean) ** 2 for x in values)
+    total_squares += group_squares
+    total_n += len(values)
+
+# Total degrees of freedom within groups (n - k)
+degrees_of_freedom_mse = total_n - len(data)
+MSE_fresh = total_squares / degrees_of_freedom_mse
+
+# Step 2: Calculate overall mean and SS for each factor
+overall_mean_fresh = np.mean([item for sublist in data.values() for item in sublist])
+ss_results_fresh = {}
+for key, values in data.items():
+    group_mean = np.mean(values)
+    ss_fresh = len(values) * (group_mean - overall_mean_fresh) ** 2
+    ss_results_fresh[key] = ss_fresh
+
+# Step 3: Calculate F-statistics
+f_statistics_fresh = {key: ss / MSE_fresh for key, ss in ss_results_fresh.items()}
+
+from scipy.stats import f
+f_critical = f.ppf(0.99, df1=1, df2=32)
+
+MSE_fresh, ss_results_fresh, f_statistics_fresh, f_critical
+
+
+```
+
+**generally what we need to do is find the MSE, the SS for each factor, and then the F statistic. Yates or anova, whatever, the point is teh find the MSE, the SS, and then the F**
 
 
 
