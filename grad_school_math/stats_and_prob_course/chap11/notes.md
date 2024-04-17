@@ -23,6 +23,14 @@ J = factor B
 
 I*J total levels or pairs of the two factors.
 
+### Approach review
+
+- find MSE
+- find SSA and SSB or the SS for any factor
+- find MSE by dividing by the degrees of freedom
+- calculate F
+- calculate p
+- if it crosses the threshold, nullify the null.
 
 ## chatgpt explanation
 
