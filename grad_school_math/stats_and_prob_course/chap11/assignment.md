@@ -421,15 +421,20 @@ None of the main effects are significant
 
 
 14. Suppose that in the experiment described in Exercise 6 on page 431, the five houses had actually been selected at random from among those of a certain age and size, so that factor B is random rather than fixed. Test H_0: sigma^2_B = 0 versus H_a: sigma^2_B > 0 using a level .01 test. Select all statements that are true.
+
 Group of answer choices
 
-We reject H0 and conclude that the variance of factor B is greater than 0
+- [ ] We reject H0 and conclude that the variance of factor B is greater than 0
+- [ ] The test statistic is 2.72.
+- [ ] MSE = 3.20
+- [ ] All the statements are true.
 
-The test statistic is 2.72. 
+work:
+![problem_14_part_1.png](images/problem_14_part_1.png)
 
-MSE = 3.20
 
-All the statements are true.
+answer:
+
 
 
 
@@ -507,13 +512,24 @@ answer:
 19. The article “An Analysis of Variance Applied to Screw Machines” (Industrial Quality Control, 1956: 8–9) describes an experiment to investigate how the length of steel bars was affected by time of day (A), heat treatment applied (B), and screw machine used (C). The three times were 8:00 A.M., 11:00 A.M., and 3:00 P.M., and there were two treatments and four machines (a 3 3 2 3 4 factorial experiment), resulting in the accompanying data [coded as 1000(length 2 4.380), which does not affect the analysis]. Sums of squares include SSAB = 1.646, SSAC = 71.021, SSBC = 1.542, SSE = 447.500, and SST = 1037.833. Select all statements that are true.
 Group of answer choices
 
-No interaction effects are significant at level .05.
+- [ ] No interaction effects are significant at level .05.
+- [ ] Factor B and C main effects are significant at the level .05.
+- [ ] Factor A and C main effects are significant at the level .05.
+- [ ] Factors AC interaction effect is significant at level .05.
 
-Factor B and C main effects are significant at the level .05.
 
-Factor A and C main effects are significant at the level .05.
+work:
+![problem_19.png](images/problem_19.png)
+![problem_19_part_2.png](images/problem_19_part_2.png)
 
-Factors AC interaction effect is significant at level .05.
+key parts:
+multiply df to get the df for AC and AB and BC. there are 3 factors. Factor A (time of day) has 3 values, so 2df. levels of heat are 2 levels, so 1 df. AB df = 2 * 1 = 2. 
+
+dfError = dfTotal - (df all the other factors and interactions)
+
+answer:
+
+- [x] No interaction effects are significant at level .05.
  
 
 20. Four different coatings are being considered for corrosion protection of metal pipe. The pipe will be buried in three different types of soil. To investigate whether the amount of corrosion depends either on the coating or on the type of soil, 12 pieces of pipe are selected. Each piece is coated with one of the four coatings and buried in one of the three types of soil for a fixed time, after which the amount of corrosion (depth of maximum pits, in .0001 in.) is determined. The data appears in the table on page 431 exercise #2. Compute {alpha_hat}_1 - {alpha_hat}_4 to 2 decimal places.
