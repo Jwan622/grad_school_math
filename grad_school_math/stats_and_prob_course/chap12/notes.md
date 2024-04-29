@@ -43,3 +43,29 @@ when we have two variables x and y, we want to know how the variables vary toget
 
 
 
+
+# Some formulas:
+
+so if
+r^2 = 1 - (SSE/SST)
+slope estimate B1_hat = 	Sxy/Sxx
+OR
+b1 = (sum_xy - n * mean_x * mean_y) / (sum_x_squared - n * mean_x**2)
+OR
+calculate b1 this way:
+
+deviations_x = x - mean_x
+deviations_y = y - mean_y
+
+Sxy = np.sum(deviations_x * deviations_y)
+Sxx = np.sum(deviations_x**2)
+b1_alternative = Sxy / Sxx
+
+b0:
+b0 = mean_y - b1 * mean_x
+SSE = sum_y_i_squared - b0 * sum_y - b1 * sum_xy
+
+sigma_estimate = np.sqrt(sse / (n - 2))
+
+for samples of pairs:
+r = Sxy / sqrt(Sxx * Syy)
