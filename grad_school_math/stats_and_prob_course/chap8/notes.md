@@ -8,6 +8,8 @@ This margin of error is calculated as the product of the critical value from the
 
 The formula in the spreadsheet (Z critical value * s/sqrt(n)) is the calculation of the margin of error. The critical value depends on the desired confidence level — for a 95% confidence interval, the Z critical value is approximately ±1.96. In your case, the critical value seems to be ±1.6448536, which is the critical value for a 90% confidence interval (this doesn't align with the 95% confidence level mentioned). The margin of error is used to calculate the upper and lower bounds of the confidence interval around the sample mean.
 
+![formula_standard_error_sample_mean.png](../images/formula_standard_error_sample_mean.png)
+
 # Notes
 
 this is how you have evidence that something is true
@@ -70,6 +72,8 @@ The actual sample size formula, assuming \( \sigma \) is known and the data is n
 
 
 ## Why do we shift?
+
+![why_we_shift_for_type_2.png](images/why_we_shift_for_type_2.png)
 
 The formulas you're referring to are for calculating the probability of a Type II error, which is denoted as \( \beta(\mu') \), under different alternative hypotheses in the context of hypothesis testing.
 

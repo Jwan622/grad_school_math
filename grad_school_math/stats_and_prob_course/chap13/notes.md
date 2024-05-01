@@ -13,6 +13,23 @@ First order model with interaction term - a variable may behave differently in t
 when you have x1 and x2 and x1 * x2:
 ![interaction_term.png](images/interaction_term.png)
 
+
+# Formula review
+
+![ssr_equation.png](images/ssr_equation.png)
+
+also b1 and b0
+
+![review_b1_b0.png](images/review_b1_b0.png)
+
+formulas for b1 and b0:
+
+![b1_b0_formulas.png](images/b1_b0_formulas.png)
+
+sxx and sxy and how they related to b1 and b0:
+
+![sxx_sxy_small_problem.png](images/sxx_sxy_small_problem.png)
+
 ## How do you access the efficacy of the model we've chosen.
 
 Maybe your r^2 is low... what can you do?
@@ -66,3 +83,13 @@ What is B1 -- estimate in avg change of Y when x1 is changed by 1, with all over
 Its value can be inflated by adding lots of predictors into the model even if most of these predictors are rather frivolous.
 
 So the objec- tive in multiple regression is not simply to explain most of the observed y variation, but to do so using a model with relatively few predictors that are easily interpreted.
+
+
+## Chi squared goodness fit test
+
+we have proportions expected, actual values, and we're trying to see if the initial percentages were correct or if one is off. The ch-test stat is the sum of differences^2 / expected.
+
+![chi-sq-test.png](images/chi-sq-test.png)
+
+![chi_squared_part_2.png](images/chi_squared_part_2.png)
+
